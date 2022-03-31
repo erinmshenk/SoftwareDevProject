@@ -8,6 +8,7 @@
  *
  * @author erinshenk
  */
-public class Registrar {
-    
+public class Registrar 
+{
+    int test;
 }
