@@ -10,6 +10,7 @@
  */
 public class Registrar 
 {
+    //patient information variables
     String nameFirst;
     String nameLast;
     String dob;
@@ -27,5 +28,9 @@ public class Registrar
     String meds;
     String medcon;
     boolean alcdrug;
+    
+    //send info to database
+    
+    
     
 }
