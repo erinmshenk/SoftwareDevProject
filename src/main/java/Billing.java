@@ -1,8 +1,3 @@
-/**
- *
- * @author salman
- */
-public class Billing {
-    
+public class Billing extends EmergencyRoom{
     
 }
