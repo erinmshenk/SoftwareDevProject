@@ -1,7 +1,3 @@
-/**
- *
- * @author salman
- */
-public class Billing {
-    int ThisIsMySecondChange;
+public class Billing extends EmergencyRoom{
+    
 }
