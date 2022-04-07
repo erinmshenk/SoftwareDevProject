@@ -10,5 +10,22 @@
  */
 public class Registrar 
 {
-    int test;
+    String nameFirst;
+    String nameLast;
+    String dob;
+    String address;
+    String zip;
+    String ssn;
+    String insurance;
+    String phys;
+    int height;
+    int weight;
+    String vax1;
+    String vax2;
+    String symptom;
+    String allergy;
+    String meds;
+    String medcon;
+    boolean alcdrug;
+    
 }
