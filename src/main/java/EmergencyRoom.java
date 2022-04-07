@@ -48,3 +48,4 @@ public class EmergencyRoom {
             exit(0);
         }
     }
+}
