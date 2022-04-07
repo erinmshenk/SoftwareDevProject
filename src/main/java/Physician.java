@@ -1,4 +1,11 @@
-
-public class Physician {
-    int Adam;
+public class Physician extends EmergencyRoom{
+    
+    
+    
+    
+    public Physician(){
+        
+        super();
+        
+    }
 }
