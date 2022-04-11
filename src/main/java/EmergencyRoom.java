@@ -11,6 +11,7 @@ public class EmergencyRoom {
         {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8888/hospitalSystem", "root", "root");
+            Statement stmt = con.createStatement();
         }catch(Exception e){System.out.println(e);}
         
         Scanner keyboard = new Scanner(System.in);
