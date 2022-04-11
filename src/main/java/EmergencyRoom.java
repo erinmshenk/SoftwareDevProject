@@ -1,10 +1,18 @@
 import static java.lang.System.exit;
 import java.util.Scanner;
+import java.sql.*;
 
 public class EmergencyRoom {
     
     public static void main(String[] args)
     {
+        //connect to database
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8888/hospitalSystem", "root", "root");
+        }catch(Exception e){System.out.println(e);}
+        
         Scanner keyboard = new Scanner(System.in);
 
         String username = keyboard.nextLine();
