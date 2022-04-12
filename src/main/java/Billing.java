@@ -9,6 +9,12 @@ public class Billing extends EmergencyRoom
     String nameLast = keyboard.nextLine();
     String ssn = keyboard.nextLine();
     
-            
+    public void searchBill()
+    {
+        String q = "SELECT testID from nursePhysicianRecord join Patient "
+                + "on nursePhysicianRecord.patientID = Patient.patientID"
+                + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
+        
+    }
             
 }
