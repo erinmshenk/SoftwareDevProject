@@ -11,9 +11,22 @@ public class Billing extends EmergencyRoom
     
     public void searchBill()
     {
+        //query for testID
         String q = "SELECT testID from nursePhysicianRecord join Patient "
                 + "on nursePhysicianRecord.patientID = Patient.patientID"
                 + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
+        //query for discharge instructions
+        String di = "SELECT discharge from nursePhysicianRecord join Patient "
+                + "on nursePhysicianRecord.patientID = Patient.patientID"
+                + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
+        //query for diagnosis
+        String mp =  "SELECT diagnosis from nursePhysicianRecord join Patient "
+                + "on nursePhysicianRecord.patientID = Patient.patientID"
+                + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
+        int testID = 0;
+        String dischargeInstruct = "";
+        String diagnosis = "";
+        
         
     }
             
