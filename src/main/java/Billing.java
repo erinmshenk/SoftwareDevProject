@@ -1,3 +1,7 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Billing extends EmergencyRoom
@@ -23,9 +27,49 @@ public class Billing extends EmergencyRoom
         String mp =  "SELECT diagnosis from nursePhysicianRecord join Patient "
                 + "on nursePhysicianRecord.patientID = Patient.patientID"
                 + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
+        
+        //variables to get results from database query
         int testID = 0;
         String dischargeInstruct = "";
         String diagnosis = "";
+        
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8888/hospitalSystem", "root", "root");
+            
+            java.sql.PreparedStatement prst = null;
+            
+            //execute testID query
+            prst = con.prepareStatement(q);
+            
+            ResultSet rs = prst.executeQuery();
+            
+            if(rs.next())
+            {
+                testID = rs.getInt(1);
+            }
+            
+            //execute discharge instructions query
+            prst = con.prepareStatement(di);
+            
+            rs = prst.executeQuery();
+            
+            if(rs.next())
+            {
+                dischargeInstruct = rs.getString(1);
+            }
+            
+            //execute diagnosis query
+            prst = con.prepareStatement(mp);
+            
+            rs = prst.executeQuery();
+            
+            if(rs.next())
+            {
+                diagnosis = rs.getString(1);
+            }
+        }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
         
         
     }
