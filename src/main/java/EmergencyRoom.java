@@ -164,22 +164,22 @@ public class EmergencyRoom {
 
         if (username.equals(nuser) && password.equals(npass))
         {
-
+            //call nurse gui
         }
 
         else if (username.equals(ruser) && password.equals(rpass))
         {
-
+            //call registrar gui
         }
 
         else if (username.equals(puser) && password.equals(ppass))
         {
-
+            //call physician gui
         }
 
         else if (username.equals(buser) && password.equals(bpass))
         {
-
+            //call billing gui
         }
 
         else
