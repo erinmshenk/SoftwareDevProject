@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 import java.sql.Statement;
 
-public class Nurse extends EmergencyRoom{
+public class Nurse{
     
     Scanner keyboard = new Scanner(System.in);
     
