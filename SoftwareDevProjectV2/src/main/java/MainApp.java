@@ -12,16 +12,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/SignInPage.fxml"));
-        
+
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
-        
+
         stage.setTitle("JavaFX and Maven");
         stage.setScene(scene);
         stage.show();
@@ -37,144 +36,138 @@ public class MainApp extends Application {
      */
     public static void main(String[] args) {
         launch(args);
-        
-         //connect to database
-        try
-        {
+
+        //connect to database
+        try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8888/hospitalSystem", "root", "root");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8888/", "root", "root");
             Statement stmt = con.createStatement();
-            
+
             //creates the database *only run this section once*
-            /**
             stmt.executeUpdate("CREATE DATABASE hospitalSystem");
-            stmt.executeUpdate("""
-                               CREATE TABLE `Patient` (
-                                 `patientID` int(11) NOT NULL AUTO_INCREMENT,
-                                 `firstName` varchar(45) DEFAULT NULL,
-                                 `lastName` varchar(45) DEFAULT NULL,
-                                 `dob` varchar(45) DEFAULT NULL,
-                                 `address` varchar(45) DEFAULT NULL,
-                                 `zip` varchar(45) DEFAULT NULL,
-                                 `ssn` varchar(45) DEFAULT NULL,
-                                 `insurance` varchar(45) DEFAULT NULL,
-                                 `primaryPhys` varchar(45) DEFAULT NULL,
-                                 `height` int(11) DEFAULT NULL,
-                                 `weight` int(11) DEFAULT NULL,
-                                 `vax1` varchar(45) DEFAULT NULL,
-                                 `vax2` varchar(45) DEFAULT NULL,
-                                 `symptom` varchar(150) DEFAULT NULL,
-                                 `allergy` varchar(45) DEFAULT NULL,
-                                 `meds` varchar(45) DEFAULT NULL,
-                                 `alcdrug` varchar(45) DEFAULT NULL,
-                                 PRIMARY KEY (`patientID`)
-                               )""");
-            stmt.executeUpdate("""
-                               CREATE TABLE `tests` (
-                                 `testID` int(11) NOT NULL AUTO_INCREMENT,
-                                 `testName` varchar(45) DEFAULT NULL,
-                                 `price` int(11) DEFAULT NULL,
-                                 PRIMARY KEY (`testID`)
-                               ) """);
-            stmt.executeUpdate("""
-                               CREATE TABLE `nursePhysicianRecord` (
-                                 `patientID` int(11) NOT NULL,
-                                 `vitals` varchar(45) DEFAULT NULL,
-                                 `height` int(11) DEFAULT NULL,
-                                 `weight` int(11) DEFAULT NULL,
-                                 `nightsStayed` int(11) DEFAULT NULL,
-                                 `bloodpressure` varchar(45) DEFAULT NULL,
-                                 `admitted` varchar(45) DEFAULT NULL,
-                                 `observation` varchar(45) DEFAULT NULL,
-                                 `pretreatment` varchar(45) DEFAULT NULL,
-                                 `testID` int(11) DEFAULT NULL,
-                                 `symptoms` varchar(45) DEFAULT NULL,
-                                 `discharge` varchar(45) DEFAULT NULL,
-                                 `medication` varchar(45) DEFAULT NULL,
-                                 `diagnosis` varchar(45) DEFAULT NULL,
-                                 PRIMARY KEY (`patientID`),
-                                 KEY `testID` (`testID`),
-                                 CONSTRAINT `patientID` FOREIGN KEY (`patientID`) REFERENCES `Patient` (`patientID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-                                 CONSTRAINT `testID` FOREIGN KEY (`testID`) REFERENCES `tests` (`testID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-                               ) """);
-            stmt.executeUpdate("""
-                               CREATE TABLE `diagnosis` (
-                                 `conditionID` int(11) NOT NULL AUTO_INCREMENT,
-                                 `condition` varchar(45) DEFAULT NULL,
-                                 `medication` varchar(45) DEFAULT NULL,
-                                 `price` int(11) DEFAULT NULL,
-                                 PRIMARY KEY (`conditionID`)
-                               ) """);
-            stmt.executeUpdate("""
-                               INSERT INTO `hospitalSystem`.`diagnosis`
-                               (`conditionID`,
-                               `condition`,
-                               `medication`,
-                               `price`)
-                               VALUES
-                               (AUTO_INCREMENT,
-                               'diabetes',
-                               'insulin',
-                               100),
-                               (AUTO_INCREMENT,
-                               'heart disease',
-                               'pravastatin',
-                               200),
-                               (AUTO_INCREMENT,
-                               'high blood pressure',
-                               'asprin',
-                               50),
-                               (AUTO_INCREMENT,
-                               'acid reflux',
-                               'omeprazole',
-                               50),
-                               (AUTO_INCREMENT,
-                               'pulled muscle',
-                               'tramadol',
-                               300),
-                               (AUTO_INCREMENT,
-                               'ibs',
-                               'miralax',
-                               150);""");
-            stmt.executeUpdate("""
-                               INSERT INTO `hospitalSystem`.`tests`
-                               (`testID`,
-                               `testName`,
-                               `price`)
-                               VALUES
-                               (AUTO_INCREMENT,
-                               'red blood cell',
-                               200),
-                               (AUTO_INCREMENT,
-                               'white blood cell',
-                               200),
-                               (AUTO_INCREMENT,
-                               'liver function',
-                               300),
-                               (AUTO_INCREMENT,
-                               'renal function',
-                               450),
-                               (AUTO_INCREMENT,
-                               'electrolyte',
-                               150),
-                               (AUTO_INCREMENT,
-                               'x ray',
-                               350),
-                               (AUTO_INCREMENT,
-                               'computed tomography',
-                               575),
-                               (AUTO_INCREMENT,
-                               'magnetic resonance image',
-                               600),
-                               (AUTO_INCREMENT,
-                               'urinary test',
-                               200),
-                               (AUTO_INCREMENT,
-                               'stool test',
-                               175);""");
-            **/
-        }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
-        
+            stmt.executeUpdate(" CREATE TABLE `Patient` (\n" +
+"                                 `patientID` int(11) NOT NULL AUTO_INCREMENT,\n" +
+"                                 `firstName` varchar(45) DEFAULT NULL,\n" +
+"                                 `lastName` varchar(45) DEFAULT NULL,\n" +
+"                                 `dob` varchar(45) DEFAULT NULL,\n" +
+"                                 `address` varchar(45) DEFAULT NULL,\n" +
+"                                 `zip` varchar(45) DEFAULT NULL,\n" +
+"                                 `ssn` varchar(45) DEFAULT NULL,\n" +
+"                                 `insurance` varchar(45) DEFAULT NULL,\n" +
+"                                 `primaryPhys` varchar(45) DEFAULT NULL,\n" +
+"                                 `height` int(11) DEFAULT NULL,\n" +
+"                                 `weight` int(11) DEFAULT NULL,\n" +
+"                                 `vax1` varchar(45) DEFAULT NULL,\n" +
+"                                 `vax2` varchar(45) DEFAULT NULL,\n" +
+"                                 `symptom` varchar(150) DEFAULT NULL,\n" +
+"                                 `allergy` varchar(45) DEFAULT NULL,\n" +
+"                                 `meds` varchar(45) DEFAULT NULL,\n" +
+"                                 `alcdrug` varchar(45) DEFAULT NULL,\n" +
+"                                 PRIMARY KEY (`patientID`)\n" +
+"                               );");
+            stmt.executeUpdate("CREATE TABLE `tests` (\n" +
+"                                 `testID` int(11) NOT NULL AUTO_INCREMENT,\n" +
+"                                 `testName` varchar(45) DEFAULT NULL,\n" +
+"                                 `price` int(11) DEFAULT NULL,\n" +
+"                                 PRIMARY KEY (`testID`)\n" +
+"                               );");
+            stmt.executeUpdate("                               CREATE TABLE `nursePhysicianRecord` (\n" +
+"                                 `patientID` int(11) NOT NULL,\n" +
+"                                 `vitals` varchar(45) DEFAULT NULL,\n" +
+"                                 `height` int(11) DEFAULT NULL,\n" +
+"                                 `weight` int(11) DEFAULT NULL,\n" +
+"                                 `nightsStayed` int(11) DEFAULT NULL,\n" +
+"                                 `bloodpressure` varchar(45) DEFAULT NULL,\n" +
+"                                 `admitted` varchar(45) DEFAULT NULL,\n" +
+"                                 `observation` varchar(45) DEFAULT NULL,\n" +
+"                                 `pretreatment` varchar(45) DEFAULT NULL,\n" +
+"                                 `testID` int(11) DEFAULT NULL,\n" +
+"                                 `symptoms` varchar(45) DEFAULT NULL,\n" +
+"                                 `discharge` varchar(45) DEFAULT NULL,\n" +
+"                                 `medication` varchar(45) DEFAULT NULL,\n" +
+"                                 `diagnosis` varchar(45) DEFAULT NULL,\n" +
+"                                 PRIMARY KEY (`patientID`),\n" +
+"                                 KEY `testID` (`testID`),\n" +
+"                                 CONSTRAINT `patientID` FOREIGN KEY (`patientID`) REFERENCES `Patient` (`patientID`) ON DELETE NO ACTION ON UPDATE NO ACTION,\n" +
+"                                 CONSTRAINT `testID` FOREIGN KEY (`testID`) REFERENCES `tests` (`testID`) ON DELETE NO ACTION ON UPDATE NO ACTION\n" +
+"                               );");
+            stmt.executeUpdate(" CREATE TABLE `diagnosis` (\n" +
+"                                 `conditionID` int(11) NOT NULL AUTO_INCREMENT,\n" +
+"                                 `condition` varchar(45) DEFAULT NULL,\n" +
+"                                 `medication` varchar(45) DEFAULT NULL,\n" +
+"                                 `price` int(11) DEFAULT NULL,\n" +
+"                                 PRIMARY KEY (`conditionID`)\n" +
+"                               );");
+            stmt.executeUpdate(" INSERT INTO `hospitalSystem`.`diagnosis`\n" +
+"                               (`conditionID`,\n" +
+"                               `condition`,\n" +
+"                               `medication`,\n" +
+"                               `price`)\n" +
+"                               VALUES\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'diabetes',\n" +
+"                               'insulin',\n" +
+"                               100),\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'heart disease',\n" +
+"                               'pravastatin',\n" +
+"                               200),\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'high blood pressure',\n" +
+"                               'asprin',\n" +
+"                               50),\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'acid reflux',\n" +
+"                               'omeprazole',\n" +
+"                               50),\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'pulled muscle',\n" +
+"                               'tramadol',\n" +
+"                               300),\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'ibs',\n" +
+"                               'miralax',\n" +
+"                               150);");
+            stmt.executeUpdate("   INSERT INTO `hospitalSystem`.`tests`\n" +
+"                               (`testID`,\n" +
+"                               `testName`,\n" +
+"                               `price`)\n" +
+"                               VALUES\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'red blood cell',\n" +
+"                               200),\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'white blood cell',\n" +
+"                               200),\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'liver function',\n" +
+"                               300),\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'renal function',\n" +
+"                               450),\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'electrolyte',\n" +
+"                               150),\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'x ray',\n" +
+"                               350),\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'computed tomography',\n" +
+"                               575),\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'magnetic resonance image',\n" +
+"                               600),\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'urinary test',\n" +
+"                               200),\n" +
+"                               (AUTO_INCREMENT,\n" +
+"                               'stool test',\n" +
+"                               175);");
+
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println(e);
+        }
+
         Scanner keyboard = new Scanner(System.in);
 
         String username = keyboard.nextLine();
@@ -194,28 +187,15 @@ public class MainApp extends Application {
         String ppass = "789!";
         String bpass = "010!";
 
-        if (username.equals(nuser) && password.equals(npass))
-        {
+        if (username.equals(nuser) && password.equals(npass)) {
             //call nurse gui
-        }
-
-        else if (username.equals(ruser) && password.equals(rpass))
-        {
+        } else if (username.equals(ruser) && password.equals(rpass)) {
             //call registrar gui
-        }
-
-        else if (username.equals(puser) && password.equals(ppass))
-        {
+        } else if (username.equals(puser) && password.equals(ppass)) {
             //call physician gui
-        }
-
-        else if (username.equals(buser) && password.equals(bpass))
-        {
+        } else if (username.equals(buser) && password.equals(bpass)) {
             //call billing gui
-        }
-
-        else
-        {
+        } else {
             exit(0);
         }
     }
