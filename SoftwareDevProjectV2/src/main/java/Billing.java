@@ -28,6 +28,8 @@ public class Billing
     String diagnosis = "";
     int testPrice = 0;
     int medPrice = 0;
+    String medName = "";
+    String testName = "";
     
     public void searchBill()
     {
@@ -95,6 +97,12 @@ public class Billing
             //get medication price
             String mp = "select price from diagnosis where condition = " + diagnosis + ";";
             
+            //get medication name
+            String mn = "select medication from diagnosis where condition = " + diagnosis + ";";
+            
+            //get test name
+            String tn = "select testName from tests where testID = " + testID + ";";
+            
             
             try
             {
@@ -124,7 +132,37 @@ public class Billing
                 {
                     medPrice = rs.getInt(1);
                 }
+                
+                //execute medication name query
+                prst = con.prepareStatement(mn);
+            
+                rs = prst.executeQuery();
+            
+                if(rs.next())
+                {
+                    medName = rs.getString(1);
+                }
+                
+                //execute test name query
+                prst = con.prepareStatement(tn);
+            
+                rs = prst.executeQuery();
+            
+                if(rs.next())
+                {
+                    testName = rs.getString(1);
+                }
             }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
+        }
+        
+        //display list of prices and discharge instructions
+        //this should be connected to GUI and run when search button is pressed
+        public void printBill()
+        {
+            System.out.println("Item: \t Price:");
+            System.out.println(medName + "\t" + medPrice);
+            System.out.println(testName + "\t" + testPrice);
+            System.out.println(dischargeInstruct);
         }
         
         
