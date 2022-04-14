@@ -1,28 +1,40 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Scanner;
+import java.sql.Statement;
+
 public class Nurse extends EmergencyRoom{
     
+    Scanner keyboard = new Scanner(System.in);
+    
+    //user input to search for patient
+    String nameFirst = keyboard.nextLine();
+    String nameLast = keyboard.nextLine();
+    String ssn = keyboard.nextLine();
+
+    //variables for nurse to input
     int vitals;
-    String height;
-    int weight;
     int nightsstayed;
     String bloodpressure;
     String admittance;
     String observation;
     String pretreatment;
     
-    public Nurse(int vitals, String height, int weight, int nightsstayed, String bloodpressure,
-    String admittance, String observation, String pretreatment){
-        
-        super(vitals, height, weight, nightsstayed, bloodpressure, admittance, observation, pretreatment);
-        
-    }
-    
-    public String toString()
+    //should be called when sumbit button is pushed by Nurse
+    public void updatePatient()
     {
-        return (super.toString()+"patient's vitals: "+ vitals +", the patient's height is: "+ height +
-                ", the patient's weight is: "+ weight +"lbs., the patient has stayed "+ nightsstayed +
-                "nights in the emergency room, the patient's blood pressure: "+ bloodpressure +
-                "does the patient require admittance? "+ admittance +"my notes on the patient's condition: "+ observation +
-                ", the pre-treatment performed to the patient before seeing the doctor: "+ pretreatment);
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8888/hospitalSystem", "root", "root");
+                Statement stmt = con.createStatement();
+                //insert data inputed by Nurse
+                stmt.executeUpdate("INSERT INTO `hospitalSystem`.`Patient`\n" + "(`Vitals`,\n" + "`Nights Stayed`,\n" + 
+                        "`Blood pressure`,\n" + "`Is patient Admitted`,\n" + "`Observation`,\n" + "`Pre-Treatment`,\n" + 
+                        "VALUES\n" + "(AUTO_INCREMENT,\n" + vitals + ",\n" + nightsstayed +",\n" + bloodpressure + 
+                        ",\n" + admittance + ",\n" + observation + ",\n" + pretreatment + ");");
+        }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
     }
-}
+
 }
