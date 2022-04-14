@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLController">
+   <children>
+      <Text layoutX="240.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Registrar!">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="157.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search the Database:  ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField layoutX="294.0" layoutY="96.0" />
+      <Button layoutX="273.0" layoutY="140.0" mnemonicParsing="false" text="Submit" />
+      <Button layoutX="237.0" layoutY="226.0" mnemonicParsing="false" text="Add New Patient File" />
+      <Button layoutX="523.0" layoutY="14.0" mnemonicParsing="false" text="Sign Out" />
+   </children>
+</AnchorPane>
