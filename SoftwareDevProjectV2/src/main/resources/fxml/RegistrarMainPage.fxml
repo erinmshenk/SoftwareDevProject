@@ -6,22 +6,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RegistrarMainController">
    <children>
-      <Text layoutX="240.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Registrar!">
+      <Text layoutX="190.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Registrar!">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="157.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search the Database:  ">
+      <Text layoutX="107.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search the Database:  ">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField layoutX="294.0" layoutY="96.0" />
-      <Button layoutX="273.0" layoutY="140.0" mnemonicParsing="false" text="Submit" />
-      <Button layoutX="237.0" layoutY="226.0" mnemonicParsing="false" text="Add New Patient File" />
-      <Button layoutX="523.0" layoutY="14.0" mnemonicParsing="false" text="Sign Out" />
+      <TextField layoutX="244.0" layoutY="227.0" />
+      <Button layoutX="173.0" layoutY="268.0" mnemonicParsing="false" text="Submit" />
+      <Button fx:id="newPatientButton" layoutX="187.0" layoutY="179.0" onAction="#openNewPatientForm" text="Add New Patient File" />
+      <Button fx:id="signOutButton" layoutX="266.0" layoutY="268.0" onAction="#signOut" text="Sign Out" />
    </children>
 </AnchorPane>
