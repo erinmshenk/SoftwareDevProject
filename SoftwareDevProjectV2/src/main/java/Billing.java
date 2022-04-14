@@ -22,6 +22,13 @@ public class Billing
     String nameLast = keyboard.nextLine();
     String ssn = keyboard.nextLine();
     
+    //variables to get results from database query
+    int testID = 0;
+    String dischargeInstruct = "";
+    String diagnosis = "";
+    int testPrice = 0;
+    int medPrice = 0;
+    
     public void searchBill()
     {
         //query for testID
@@ -33,14 +40,10 @@ public class Billing
                 + "on nursePhysicianRecord.patientID = Patient.patientID"
                 + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
         //query for diagnosis
-        String mp =  "SELECT diagnosis from nursePhysicianRecord join Patient "
+        String ds =  "SELECT diagnosis from nursePhysicianRecord join Patient "
                 + "on nursePhysicianRecord.patientID = Patient.patientID"
                 + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
         
-        //variables to get results from database query
-        int testID = 0;
-        String dischargeInstruct = "";
-        String diagnosis = "";
         
         try
         {
@@ -70,7 +73,7 @@ public class Billing
             }
             
             //execute diagnosis query
-            prst = con.prepareStatement(mp);
+            prst = con.prepareStatement(ds);
             
             rs = prst.executeQuery();
             
@@ -80,6 +83,50 @@ public class Billing
             }
         }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
         
-        
     }
+        
+        //getting prices from database
+        public void compileBill()
+        {
+            //query statements
+            //get test price
+            String tp = "select price from tests where testID = " + testID + ";";
+            
+            //get medication price
+            String mp = "select price from diagnosis where condition = " + diagnosis + ";";
+            
+            
+            try
+            {
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8888/hospitalSystem", "root", "root");
+            
+                java.sql.PreparedStatement prst = null;
+                
+                //execute discharge instructions query
+                prst = con.prepareStatement(tp);
+                
+                ResultSet rs = prst.executeQuery();
+            
+                rs = prst.executeQuery();
+            
+                if(rs.next())
+                {
+                    testPrice = rs.getInt(1);
+                }
+                
+                //execute discharge instructions query
+                prst = con.prepareStatement(mp);
+            
+                rs = prst.executeQuery();
+            
+                if(rs.next())
+                {
+                    medPrice = rs.getInt(1);
+                }
+            }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
+        }
+        
+        
+    
 }
