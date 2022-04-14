@@ -1,0 +1,19 @@
+= Exchange Rate Calculator
+
+== Description
+HCC recently opened a bee hive on campus.  (Really!  Read about it https://www.howardcc.edu/about-us/news-events/news/hcc-is-buzzing-with-excitement-with-installation-of-honey-bee-hive[here].)  Now imagine that the college started to market and sell honey under the brand HCC Honey Inc. ... (Not really...you have to imagine it.)  
+
+You are the newest employee of the college working with this fictitious brand. Recently online orders have been arriving from Mexico. As the organization's programmer, you have been assigned the task of creating a JavaFX GUI for converting price quotes from dollars to pesos.  Your GUI  will need to:
+
+== Requirements
+. Display the company name, HCC Honey Inc.
+
+. Contain an input area, named "Dollars", where the person taking the order can enter a dollar figure.
+
+. Contain an output area, named "Pesos" where the person taking the order can see the conversion to Mexican Pesos.   
+
+. Contain a button, named "Convert", to convert dollars to pesos (using the conversion rate: 1 dollar = 19.23 pesos). Do not use any other conversion other than this one, even if the rate changes.
+
+. Contain a button, named "Clear" to clear the values in both the input and output areas.
+
+. Use a GridPane layout container.
