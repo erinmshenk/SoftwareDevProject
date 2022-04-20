@@ -30,6 +30,8 @@ public class Billing
     int medPrice = 0;
     String medName = "";
     String testName = "";
+    int nightsStayed = 0;
+    int nightPrice = 0;
     
     public void searchBill()
     {
@@ -45,6 +47,10 @@ public class Billing
         String ds =  "SELECT diagnosis from nursePhysicianRecord join Patient "
                 + "on nursePhysicianRecord.patientID = Patient.patientID"
                 + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
+        
+        //get number of nights stayed
+        String ns = "select nightsStayed from nursePhysicianRecord where firstName = " 
+                + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
         
         
         try
@@ -83,6 +89,15 @@ public class Billing
             {
                 diagnosis = rs.getString(1);
             }
+            
+            prst = con.prepareStatement(ns);
+            
+            rs = prst.executeQuery();
+            
+            if(rs.next())
+            {
+                nightsStayed = rs.getInt(1);
+            }
         }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
         
     }
@@ -102,6 +117,7 @@ public class Billing
             
             //get test name
             String tn = "select testName from tests where testID = " + testID + ";";
+            
             
             
             try
@@ -153,6 +169,9 @@ public class Billing
                     testName = rs.getString(1);
                 }
             }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
+            
+            //calculates hospital stay price
+            nightPrice = nightsStayed * 250;
         }
         
         //display list of prices and discharge instructions
@@ -162,6 +181,7 @@ public class Billing
             System.out.println("Item: \t Price:");
             System.out.println(medName + "\t" + medPrice);
             System.out.println(testName + "\t" + testPrice);
+            System.out.println("Nights Stayed: " + nightsStayed + "\t" + nightPrice);
             System.out.println(dischargeInstruct);
         }
         
