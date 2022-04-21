@@ -31,7 +31,6 @@ public class Registrar
     String symptom;
     String allergy;
     String meds;
-    String medcon;
     boolean alcdrug;
     
     //should be called when sumbit button is pushed by registrar
