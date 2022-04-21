@@ -18,9 +18,9 @@
             <Font size="14.0" />
          </font>
       </Text>
+      <Button fx:id="newPatientButton" layoutX="187.0" layoutY="179.0" onAction="#openNewPatientForm" text="Add New Patient File" />
       <TextField layoutX="244.0" layoutY="227.0" />
       <Button layoutX="173.0" layoutY="268.0" mnemonicParsing="false" text="Submit" />
-      <Button fx:id="newPatientButton" layoutX="187.0" layoutY="179.0" onAction="#openNewPatientForm" text="Add New Patient File" />
       <Button fx:id="signOutButton" layoutX="266.0" layoutY="268.0" onAction="#signOut" text="Sign Out" />
    </children>
 </AnchorPane>
