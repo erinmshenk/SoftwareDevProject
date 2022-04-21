@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,8 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.NewPatientController">
    <children>
       <GridPane layoutX="150.0" layoutY="110.0">
         <columnConstraints>
@@ -26,24 +26,22 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField promptText="Patient ID" />
-            <TextField promptText="First Name" GridPane.columnIndex="1" />
-            <TextField promptText="Last Name" GridPane.columnIndex="2" />
-            <TextField promptText="Date of Birth" GridPane.rowIndex="1" />
-            <TextField promptText="Address" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField promptText="Zip" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <TextField promptText="SSN" GridPane.rowIndex="2" />
-            <TextField promptText="Insurance" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField promptText="Primary Physician" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <TextField promptText="Height" GridPane.rowIndex="3" />
-            <TextField promptText="Weight" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField promptText="Vax 1" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <TextField promptText="Vax 2" GridPane.rowIndex="4" />
-            <TextField promptText="Symptoms" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField promptText="Medicines" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <TextField promptText="Alcohol/Drugs" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <TextField fx:id="patientIDInput" promptText="Patient ID" />
+            <TextField fx:id="firstNameInput" promptText="First Name" GridPane.columnIndex="1" />
+            <TextField fx:id="lastNameInput" promptText="Last Name" GridPane.columnIndex="2" />
+            <TextField fx:id="dateOfBirthInput" promptText="Date of Birth" GridPane.rowIndex="1" />
+            <TextField fx:id="addressInput" promptText="Address" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="zipInput" promptText="Zip" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="ssnInput" promptText="SSN" GridPane.rowIndex="2" />
+            <TextField fx:id="insuranceInput" promptText="Insurance" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="primaryPhysicianInput" promptText="Primary Physician" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="heightInput" promptText="Height" GridPane.rowIndex="3" />
+            <TextField fx:id="weightInput" promptText="Weight" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="vax1Input" promptText="Vax 1" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="vax2Input" promptText="Vax 2" GridPane.rowIndex="4" />
+            <TextField fx:id="symptomsInput" promptText="Symptoms" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="medicinesInput" promptText="Medicines" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <TextField fx:id="alcoholOrDrugsInput" promptText="Alcohol/Drugs" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
       <Label layoutX="164.0" layoutY="55.0" text="Fill in the New Patient Information">
@@ -51,5 +49,7 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Button fx:id="submitNewForm" layoutX="182.0" layoutY="306.0" onAction="#submitNewForm" text="Submit Information" />
+      <Button fx:id="cancelNewForm" layoutX="336.0" layoutY="306.0" onAction="#cancelNewForm"  text="Cancel Form" />
    </children>
 </AnchorPane>
