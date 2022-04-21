@@ -12,7 +12,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class NewPatientController extends Registrar implements Initializable {
+public class NewPatientController implements Initializable {
     private Stage stage;
     private Scene scene;
         
@@ -82,7 +82,9 @@ public class NewPatientController extends Registrar implements Initializable {
         System.out.println(weight);
         System.out.println(alcdrug);
         
-        insertPatient();
+        Registrar r = new Registrar();
+        r.insertPatient(nameFirst, nameLast, dob, address, zip, ssn, insurance, phys,
+            height, weight, vax1, vax2, symptom, allergy, meds, alcdrug);
         
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/RegistrarMainPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
