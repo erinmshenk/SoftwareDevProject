@@ -26,6 +26,7 @@ public class RegistrarMainController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/NewPatientForm.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        stage.setTitle("New Patient Form");
         stage.setScene(scene);
         stage.show();
     }
@@ -35,6 +36,7 @@ public class RegistrarMainController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/SignInPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        stage.setTitle("Sign In Page");
         stage.setScene(scene);
         stage.show();
     }

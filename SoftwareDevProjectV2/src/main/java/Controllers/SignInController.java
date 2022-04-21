@@ -28,23 +28,28 @@ public class SignInController implements Initializable {
     private void handleButtonAction(ActionEvent event) throws IOException {
         String user = usernameInput.getText();
         String pass = passwordInput.getText();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Parent root;
         if (user.equals("adam") && pass.equals("root")){
             root = FXMLLoader.load(getClass().getResource("/fxml/RegistrarMainPage.fxml"));
+            stage.setTitle("Registrar Main Page");
         }
         else if (user.equals("nurse") && pass.equals("root")){
             root = FXMLLoader.load(getClass().getResource("/fxml/NurseMainPage.fxml"));
+            stage.setTitle("Nurse Main Page");
         }
         else if (user.equals("physician") && pass.equals("root")){
             root = FXMLLoader.load(getClass().getResource("/fxml/PhysicianMainPage.fxml"));
+            stage.setTitle("Physician Main Page");
         }
         else if (user.equals("billing") && pass.equals("root")){
             root = FXMLLoader.load(getClass().getResource("/fxml/BillingMainPage.fxml"));
+            stage.setTitle("Registrar Main Page");
         }
         else {
-            root = FXMLLoader.load(getClass().getResource("/fxml/SignInPage.fxml"));            
+            root = FXMLLoader.load(getClass().getResource("/fxml/SignInPage.fxml"));
+            stage.setTitle("Sign In Page");
         }
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

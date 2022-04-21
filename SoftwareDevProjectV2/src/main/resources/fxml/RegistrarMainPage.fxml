@@ -14,5 +14,6 @@
       </Text>
       <Button fx:id="newPatientButton" layoutX="187.0" layoutY="188.0" onAction="#openNewPatientForm" text="Add New Patient File" />
       <Button fx:id="signOutButton" layoutX="219.0" layoutY="238.0" onAction="#signOut" text="Sign Out" />
+      <Text fx:id="formOutcome" layoutX="239.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>
