@@ -36,6 +36,7 @@ public class Registrar
     //should be called when sumbit button is pushed by registrar
     public void insertPatient()
     {
+        System.out.println("it actually printed!!!!!");
         try
         {
             Class.forName("com.mysql.jdbc.Driver");

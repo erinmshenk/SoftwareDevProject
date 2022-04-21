@@ -1,5 +1,3 @@
-package Controllers;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -11,11 +9,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class NewPatientController implements Initializable {
+public class NewPatientController extends Registrar implements Initializable {
     private Stage stage;
     private Scene scene;
         
@@ -84,6 +81,8 @@ public class NewPatientController implements Initializable {
         System.out.println(height);
         System.out.println(weight);
         System.out.println(alcdrug);
+        
+        insertPatient();
         
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/RegistrarMainPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

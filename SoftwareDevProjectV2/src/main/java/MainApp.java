@@ -1,4 +1,3 @@
-
 import static java.lang.System.exit;
 import java.sql.Connection;
 import java.sql.DriverManager;
