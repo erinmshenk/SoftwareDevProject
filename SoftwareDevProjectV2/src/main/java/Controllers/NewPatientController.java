@@ -23,39 +23,36 @@ public class NewPatientController implements Initializable {
     private TextField patientIDInput;
     @FXML
     private TextField firstNameInput;
-
-//    @FXML
-//    private TextField nameFirstInput;
-//    @FXML
-//    private TextField nameLast;
-//    @FXML
-//    private TextField dob;
-//    @FXML
-//    private TextField address;
-//    @FXML
-//    private TextField zip;
-//    @FXML
-//    private TextField ssn;
-//    @FXML
-//    private TextField insurance;
-//    @FXML
-//    private TextField phys;
-//    @FXML
-//    private TextField height;
-//    @FXML
-//    private TextField weight;
-//    @FXML
-//    private TextField vax1;
-//    @FXML
-//    private TextField vax2;
-//    @FXML
-//    private TextField symptom;
-//    @FXML
-//    private TextField allergy;
-//    @FXML
-//    private TextField meds;
-//    @FXML
-//    private CheckBox alcdrug;
+    @FXML
+    private TextField lastNameInput;
+    @FXML
+    private TextField dateOfBirthInput;
+    @FXML
+    private TextField addressInput;
+    @FXML
+    private TextField zipInput;
+    @FXML
+    private TextField ssnInput;
+    @FXML
+    private TextField insuranceInput;
+    @FXML
+    private TextField primaryPhysicianInput;
+    @FXML
+    private TextField heightInput;
+    @FXML
+    private TextField weightInput;
+    @FXML
+    private TextField vax1Input;
+    @FXML
+    private TextField vax2Input;
+    @FXML
+    private TextField symptomsInput;
+    @FXML
+    private TextField medicinesInput;
+    @FXML
+    private TextField allergiesInput;
+    @FXML
+    private CheckBox alcdrugInput;
 
     
 
@@ -64,9 +61,30 @@ public class NewPatientController implements Initializable {
     @FXML
     private void submitNewForm(ActionEvent event) throws IOException {
         String patientID = patientIDInput.getText();
-        String firstName = firstNameInput.getText();
+        String nameFirst = firstNameInput.getText();
+        String nameLast = lastNameInput.getText();
+        String dob = dateOfBirthInput.getText();
+        String address = addressInput.getText();
+        String zip = zipInput.getText();
+        String ssn = ssnInput.getText();
+        String insurance = insuranceInput.getText();
+        String phys = primaryPhysicianInput.getText();
+        int height = Integer.parseInt(heightInput.getText());
+        int weight = Integer.parseInt(weightInput.getText());
+        String vax1 = vax1Input.getText();
+        String vax2 = vax2Input.getText();
+        String symptom = symptomsInput.getText();
+        String allergy = medicinesInput.getText();
+        String meds = allergiesInput.getText();
+        boolean alcdrug = alcdrugInput.isSelected();
+        
+        
         System.out.println(patientID);
-        System.out.println(firstName);
+        System.out.println(nameFirst);
+        System.out.println(height);
+        System.out.println(weight);
+        System.out.println(alcdrug);
+        
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/RegistrarMainPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
