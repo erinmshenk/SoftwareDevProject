@@ -1,5 +1,3 @@
-package Controllers;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class BillingMainController implements Initializable {
+public class RegistrarMainController implements Initializable {
     private Stage stage;
     private Scene scene;
         
@@ -26,6 +24,7 @@ public class BillingMainController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/NewPatientForm.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        stage.setTitle("New Patient Form");
         stage.setScene(scene);
         stage.show();
     }
@@ -35,6 +34,7 @@ public class BillingMainController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/SignInPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        stage.setTitle("Sign In Page");
         stage.setScene(scene);
         stage.show();
     }

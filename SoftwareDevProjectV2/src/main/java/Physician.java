@@ -17,7 +17,7 @@ public class Physician{
     
     //variables for doctor to input
     String tests;
-    String observation;
+    String observations;
     String symptoms;
     String discharge;
     String medications;

@@ -36,8 +36,8 @@ public class Nurse{
                         "`nightsStayed`,\n" + "`bloodpressure`,\n" + "`admittance`,\n" + "`observation`,\n" + "`pretreatment`)\n" + 
                         "VALUES\n" + "(?, ?, ?, ?, ?, ?);");
                 
-                prst.setString(1, vitals);
-                prst.setString(2, nightsStayed);
+//                prst.setString(1, vitals);
+//                prst.setString(2, nightsStayed);
                 prst.setString(3, bloodpressure);
                 prst.setString(4, admittance);
                 prst.setString(5, observation);
