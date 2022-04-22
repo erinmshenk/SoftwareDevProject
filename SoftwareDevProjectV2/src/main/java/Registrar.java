@@ -21,10 +21,9 @@ public class Registrar
     public void insertPatient(String nameFirst, String nameLast, String dob, String address, String zip, String ssn, String insurance, String phys,
             int height, int weight, String vax1, String vax2, String symptom, String allergy, String meds, boolean alcdrug)
     {
-        System.out.println("it actually printed!!!!!");
         try
         {
-            Class.forName("com.mysql.jdbc.Driver");
+                Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8889/hospitalSystem", "root", "root");
                 Statement stmt = con.createStatement();
                 //insert patient
