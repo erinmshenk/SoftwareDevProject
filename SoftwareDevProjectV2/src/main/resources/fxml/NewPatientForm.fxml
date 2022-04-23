@@ -27,23 +27,22 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="patientIDInput" promptText="Patient ID" />
-            <TextField fx:id="firstNameInput" promptText="First Name" GridPane.columnIndex="1" />
-            <TextField fx:id="lastNameInput" promptText="Last Name" GridPane.columnIndex="2" />
-            <TextField fx:id="dateOfBirthInput" promptText="Date of Birth" GridPane.rowIndex="1" />
-            <TextField fx:id="addressInput" promptText="Address" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="zipInput" promptText="Zip" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <TextField fx:id="ssnInput" promptText="SSN" GridPane.rowIndex="2" />
-            <TextField fx:id="insuranceInput" promptText="Insurance" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="primaryPhysicianInput" promptText="Primary Physician" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <TextField fx:id="heightInput" promptText="Height" GridPane.rowIndex="3" />
-            <TextField fx:id="weightInput" promptText="Weight" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="vax1Input" promptText="Vax 1" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <TextField fx:id="vax2Input" promptText="Vax 2" GridPane.rowIndex="4" />
-            <TextField fx:id="symptomsInput" promptText="Symptoms" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField fx:id="medicinesInput" promptText="Medicines" GridPane.rowIndex="5" />
-            <TextField fx:id="allergiesInput" promptText="Allergies" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <CheckBox fx:id="alcdrugInput" mnemonicParsing="false" text="Alcohol/Drugs?" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <TextField fx:id="firstNameInput" promptText="First Name" />
+            <TextField fx:id="lastNameInput" promptText="Last Name" GridPane.columnIndex="1" />
+            <TextField fx:id="dateOfBirthInput" promptText="Date of Birth" GridPane.columnIndex="2" />
+            <TextField fx:id="addressInput" promptText="Address" GridPane.rowIndex="1" />
+            <TextField fx:id="zipInput" promptText="Zip" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="ssnInput" promptText="SSN" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="insuranceInput" promptText="Insurance" GridPane.rowIndex="2" />
+            <TextField fx:id="primaryPhysicianInput" promptText="Primary Physician" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="heightInput" promptText="Height" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="weightInput" promptText="Weight" GridPane.rowIndex="3" />
+            <TextField fx:id="vax1Input" promptText="Vax 1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="vax2Input" promptText="Vax 2" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="symptomsInput" promptText="Symptoms" GridPane.rowIndex="4" />
+            <TextField fx:id="medicinesInput" promptText="Medicines" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <TextField fx:id="allergiesInput" promptText="Allergies" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <CheckBox fx:id="alcdrugInput" mnemonicParsing="false" text="Alcohol/Drugs?" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
       <Label layoutX="114.0" layoutY="80.0" text="Fill in the New Patient Information">
@@ -52,7 +51,6 @@
          </font>
       </Label>
       <Button fx:id="submitNewForm" layoutX="132.0" layoutY="331.0" onAction="#submitNewForm" text="Submit Information" />
-
       <Button fx:id="cancelNewForm" layoutX="286.0" layoutY="331.0" onAction="#cancelNewForm" text="Cancel Form" />
    </children>
 </AnchorPane>

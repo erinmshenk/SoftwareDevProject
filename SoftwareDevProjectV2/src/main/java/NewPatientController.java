@@ -17,8 +17,6 @@ public class NewPatientController implements Initializable {
     private Scene scene;
         
     @FXML
-    private TextField patientIDInput;
-    @FXML
     private TextField firstNameInput;
     @FXML
     private TextField lastNameInput;
@@ -57,7 +55,6 @@ public class NewPatientController implements Initializable {
 //New Patient Form Controller
     @FXML
     private void submitNewForm(ActionEvent event) throws IOException {
-        String patientID = patientIDInput.getText();
         String nameFirst = firstNameInput.getText();
         String nameLast = lastNameInput.getText();
         String dob = dateOfBirthInput.getText();
@@ -74,13 +71,6 @@ public class NewPatientController implements Initializable {
         String allergy = medicinesInput.getText();
         String meds = allergiesInput.getText();
         boolean alcdrug = alcdrugInput.isSelected();
-        
-        
-        System.out.println(patientID);
-        System.out.println(nameFirst);
-        System.out.println(height);
-        System.out.println(weight);
-        System.out.println(alcdrug);
         
         Registrar r = new Registrar();
         r.insertPatient(nameFirst, nameLast, dob, address, zip, ssn, insurance, phys,
