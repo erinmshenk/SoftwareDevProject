@@ -37,9 +37,9 @@ public class Registrar
         String meds = meds;
         boolean alcdrug = alcdrug;            
     }
+    
     //should be called when sumbit button is pushed by registrar
-    public void insertPatient(String nameFirst, String nameLast, String dob, String address, String zip, String ssn, String insurance, String phys,
-            int height, int weight, String vax1, String vax2, String symptom, String allergy, String meds, boolean alcdrug)
+    public void insertPatient()
     {
         try
         {
@@ -76,6 +76,7 @@ public class Registrar
     
     public void passInfo()
     {
-        
+        PatientFileDisplayController p = new PatientFileDisplayController(nameFirst, nameLast, dob, address, zip, ssn, insurance, phys,
+            height, weight, vax1, vax2, symptom, allergy, meds, alcdrug);
     }
 }
