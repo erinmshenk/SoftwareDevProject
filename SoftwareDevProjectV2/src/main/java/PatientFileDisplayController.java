@@ -85,23 +85,31 @@ public class PatientFileDisplayController implements Initializable {
         stage.show();
     }
 
+    public void rewriteTable(String firstName, String lastName){
+        firstNameText.setText(firstName);
+        lastNameText.setText(lastName);
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        firstNameText.setText("replace text with variable");
-        lastNameText.setText("replace text with variable");
-        dobText.setText("replace text with variable");
-        addressText.setText("replace text with variable");
-        zipText.setText("replace text with variable");
-        ssnText.setText("replace text with variable");
-        insuranceText.setText("replace text with variable");
-        physText.setText("replace text with variable");
-        heightText.setText("replace text with variable");
-        weightText.setText("replace text with variable");
-        vax1Text.setText("replace text with variable");
-        vax2Text.setText("replace text with variable");
-        symptomText.setText("replace text with variable");
-        allergyText.setText("replace text with variable");
-        medsText.setText("replace text with variable");
-        alcdrugText.setText("replace text with variable");
+        String name = "string in override";
+        String last = "string in override";
+        
+        rewriteTable(name, last);
+//        firstNameText.setText("replace text with variable");
+//        lastNameText.setText("replace text with variable");
+//        dobText.setText("replace text with variable");
+//        addressText.setText("replace text with variable");
+//        zipText.setText("replace text with variable");
+//        ssnText.setText("replace text with variable");
+//        insuranceText.setText("replace text with variable");
+//        physText.setText("replace text with variable");
+//        heightText.setText("replace text with variable");
+//        weightText.setText("replace text with variable");
+//        vax1Text.setText("replace text with variable");
+//        vax2Text.setText("replace text with variable");
+//        symptomText.setText("replace text with variable");
+//        allergyText.setText("replace text with variable");
+//        medsText.setText("replace text with variable");
+//        alcdrugText.setText("replace text with variable");
     }
 }

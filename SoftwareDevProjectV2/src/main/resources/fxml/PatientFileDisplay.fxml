@@ -26,30 +26,30 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text fx:id="firstNameText" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text fx:id="lastNameText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" />
-            <Text fx:id="dobText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" />
-            <Text fx:id="addressText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="1" />
-            <Text fx:id="zipText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Text fx:id="ssnText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Text fx:id="insuranceText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="2" />
-            <Text fx:id="physText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Text fx:id="heightText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Text fx:id="weightText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="3" />
-            <Text fx:id="vax1Text" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Text fx:id="vax2Text" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Text fx:id="symptomText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="4" />
-            <Text fx:id="allergyText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Text fx:id="medsText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Text fx:id="alcdrugText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Text fx:id="firstNameText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" />
+            <Text fx:id="lastNameText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="1" />
+            <Text fx:id="dobText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="2" />
+            <Text fx:id="addressText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.rowIndex="1" />
+            <Text fx:id="zipText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Text fx:id="ssnText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Text fx:id="insuranceText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.rowIndex="2" />
+            <Text fx:id="physText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Text fx:id="heightText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Text fx:id="weightText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.rowIndex="3" />
+            <Text fx:id="vax1Text" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Text fx:id="vax2Text" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Text fx:id="symptomText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.rowIndex="4" />
+            <Text fx:id="allergyText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Text fx:id="medsText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Text fx:id="alcdrugText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
-      <Label layoutX="114.0" layoutY="80.0" text="Fill in the New Patient Information">
+      <Label layoutX="103.0" layoutY="80.0" text="Search Display of Patient Information">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="editPatientData" layoutX="132.0" layoutY="331.0" onAction="#editPatientData" text="Edit Patient Data" />
-      <Button fx:id="returnToMainPage" layoutX="286.0" layoutY="331.0" onAction="#returnToMainPage" text="Return To Main Page" />
+      <Button fx:id="editPatientData" layoutX="110.0" layoutY="330.0" onAction="#editPatientData" text="Edit Patient Data" />
+      <Button fx:id="returnToMainPage" layoutX="264.0" layoutY="330.0" onAction="#returnToMainPage" text="Return To Main Page" />
    </children>
 </AnchorPane>

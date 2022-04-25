@@ -40,8 +40,8 @@
             <TextField fx:id="vax1Input" promptText="Vax 1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField fx:id="vax2Input" promptText="Vax 2" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <TextField fx:id="symptomsInput" promptText="Symptoms" GridPane.rowIndex="4" />
-            <TextField fx:id="medicinesInput" promptText="Medicines" GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <TextField fx:id="allergiesInput" promptText="Allergies" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="medicinesInput" promptText="Medicines" GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <CheckBox fx:id="alcdrugInput" mnemonicParsing="false" text="Alcohol/Drugs?" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>

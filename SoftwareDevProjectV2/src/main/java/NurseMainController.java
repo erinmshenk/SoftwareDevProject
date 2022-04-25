@@ -9,9 +9,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class NurseMainController implements Initializable {
+public class NurseMainController extends PatientFileDisplayController implements Initializable {
     private Stage stage;
     private Scene scene;
 
@@ -21,10 +22,58 @@ public class NurseMainController implements Initializable {
     private TextField firstNameSearch;
     @FXML
     private TextField lastNameSearch;
+    @FXML
+    private Text patientSearchError;
+    @FXML
+    private Text firstNameText;
+    @FXML
+    private Text lastNameText;
+    @FXML
+    private Text dobText;
+    @FXML
+    private Text addressText;
+    @FXML
+    private Text zipText;
+    @FXML
+    private Text ssnText;
+    @FXML
+    private Text insuranceText;
+    @FXML
+    private Text physText;
+    @FXML
+    private Text heightText;
+    @FXML
+    private Text weightText;
+    @FXML
+    private Text vax1Text;
+    @FXML
+    private Text vax2Text;
+    @FXML
+    private Text symptomText;
+    @FXML
+    private Text medsText;
+    @FXML
+    private Text allergyText;
+    @FXML
+    private Text alcdrugText;
+    @FXML
+    private Text vitalsText;
+    @FXML
+    private Text nightsStayedText;
+    @FXML
+    private Text bloodPressureText;
+    @FXML
+    private Text admittanceText;
+    @FXML
+    private Text observationText;
+    @FXML
+    private Text pretreatmentText;    
+
+    
     
 //Nurse Main Page Controller
     @FXML
-    private void nurseSearchButton(ActionEvent event) throws IOException {
+    public void nurseSearchButton(ActionEvent event) throws IOException {
         
         String patientID = patientIDSearch.getText();
         String firstName = firstNameSearch.getText();
@@ -37,11 +86,13 @@ public class NurseMainController implements Initializable {
         //check patient ID match
         //check patient first name match
         //check patient last name match
+
+        //if the searched patient exists, set the below variables to true
+        //if the search does not exist, set them to false
+        boolean patientFound = true;
         
         //need to load the data into the variables listed below
         
-        String nameFirst = "adam";
-        String nameLast = "adam";
         String dob = "adam";
         String address = "adam";
         String zip = "adam";
@@ -57,11 +108,36 @@ public class NurseMainController implements Initializable {
         String meds = "adam";
         boolean alcdrug = true;
 
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/PatientFileDisplay.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (patientFound == true){
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/PatientFileDisplay.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            
+            firstNameText.setText(firstName);
+            lastNameText.setText(lastName);
+            lastNameText.setText("string in search button");
+            dobText.setText(dob);
+            addressText.setText(address);
+            zipText.setText(zip);
+            ssnText.setText(ssn);
+            insuranceText.setText(insurance);
+            physText.setText(phys);
+            heightText.setText(Integer.toString(height));
+            weightText.setText(Integer.toString(weight));
+            vax1Text.setText(vax1);
+            vax2Text.setText(vax2);
+            symptomText.setText(symptom);
+            allergyText.setText(allergy);
+            medsText.setText(meds);
+            alcdrugText.setText(Boolean.toString(alcdrug));
+            stage.show();
+            firstNameText.setText("changed3?");            
+            //fill in table
+        }
+        else{
+            patientSearchError.setText("Error in the Search Term");
+        }
     }
 
     @FXML
