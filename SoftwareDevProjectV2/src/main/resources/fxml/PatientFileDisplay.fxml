@@ -27,21 +27,21 @@
         </rowConstraints>
          <children>
             <Text fx:id="firstNameText" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text fx:id="lastNameInput" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" />
-            <Text fx:id="dateOfBirthInput" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" />
-            <Text fx:id="addressInput" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="1" />
-            <Text fx:id="zipInput" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Text fx:id="ssnInput" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Text fx:id="insuranceInput" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="2" />
-            <Text fx:id="primaryPhysicianInput" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Text fx:id="heightInput" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Text fx:id="weightInput" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="3" />
-            <Text fx:id="vax1Input" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Text fx:id="vax2Input" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Text fx:id="symptomsInput" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="4" />
-            <Text fx:id="allergiesInput" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Text fx:id="medicinesInput" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Text fx:id="alcdrugInput" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Text fx:id="lastNameText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" />
+            <Text fx:id="dobText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" />
+            <Text fx:id="addressText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="1" />
+            <Text fx:id="zipText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Text fx:id="ssnText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Text fx:id="insuranceText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="2" />
+            <Text fx:id="physText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Text fx:id="heightText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Text fx:id="weightText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="3" />
+            <Text fx:id="vax1Text" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Text fx:id="vax2Text" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Text fx:id="symptomText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.rowIndex="4" />
+            <Text fx:id="allergyText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Text fx:id="medsText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Text fx:id="alcdrugText" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
       <Label layoutX="114.0" layoutY="80.0" text="Fill in the New Patient Information">
@@ -49,7 +49,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="submitNewForm" layoutX="132.0" layoutY="331.0" onAction="#submitNewForm" text="Submit Information" />
-      <Button fx:id="cancelNewForm" layoutX="286.0" layoutY="331.0" onAction="#cancelNewForm" text="Cancel Form" />
+      <Button fx:id="editPatientData" layoutX="132.0" layoutY="331.0" onAction="#editPatientData" text="Edit Patient Data" />
+      <Button fx:id="returnToMainPage" layoutX="286.0" layoutY="331.0" onAction="#returnToMainPage" text="Return To Main Page" />
    </children>
 </AnchorPane>

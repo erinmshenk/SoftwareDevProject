@@ -25,7 +25,18 @@ public class NurseMainController implements Initializable {
 //Nurse Main Page Controller
     @FXML
     private void nurseSearchButton(ActionEvent event) throws IOException {
-        //take patient data
+        
+        String patientID = patientIDSearch.getText();
+        String firstName = firstNameSearch.getText();
+        String lastName = lastNameSearch.getText();
+
+        System.out.println(patientID);
+        System.out.println(firstName);
+        System.out.println(lastName);
+        
+        //check patient ID match
+        //check patient first name match
+        //check patient last name match
         
         //need to load the data into the variables listed below
         
@@ -46,10 +57,6 @@ public class NurseMainController implements Initializable {
         String meds = "adam";
         boolean alcdrug = true;
 
-        //check patient ID match
-        //check patient first name match
-        //check patient last name match
-        
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/PatientFileDisplay.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
