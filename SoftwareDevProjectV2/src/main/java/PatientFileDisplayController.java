@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 public class PatientFileDisplayController implements Initializable {
     private Stage stage;
     private Scene scene;
-        
+    
     @FXML
     private Text firstNameText;
     @FXML
@@ -60,6 +60,42 @@ public class PatientFileDisplayController implements Initializable {
     private Text observationText;
     @FXML
     private Text pretreatmentText;    
+    
+    public PatientFileDisplayController(String nameFirst, String nameLast, String dob, String address, String zip, String ssn, String insurance, String phys,
+            int height, int weight, String vax1, String vax2, String symptom, String allergy, String meds, boolean alcdrug)
+    {
+        firstNameText = new Text(nameFirst);
+        
+        lastNameText = new Text(nameLast);
+        
+        dobText = new Text(dob);
+        
+        addressText = new Text(address);
+        
+        zipText = new Text(zip);
+        
+        ssnText = new Text(ssn);
+        
+        insuranceText = new Text(insurance);
+        
+        physText = new Text(phys);
+        
+        heightText = new Text(Integer.toString(height));
+        
+        weightText = new Text(Integer.toString(weight));
+        
+        vax1Text = new Text(vax1);
+       
+        vax2Text = new Text(vax2);
+        
+        symptomText = new Text(symptom);
+        
+        medsText = new Text(meds);
+        
+        allergyText = new Text(allergy);
+        
+        alcdrugText = new Text(Boolean.toString(alcdrug));
+    }
 
     
     
