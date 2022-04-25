@@ -86,8 +86,10 @@ public class PatientFileDisplayController implements Initializable {
     }
 
     public void updateTable(String patientID){
-        firstNameText.setText(patientID);
         //fill the below lines with data based on from patientID
+
+        String firstName = "adam";
+        firstNameText.setText(firstName);
         
 //        lastNameText.setText(lastName);
 //        dobText.setText(dob);
@@ -107,6 +109,7 @@ public class PatientFileDisplayController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        updateTable("patientID");
 //        firstNameText.setText("replace text with variable");
 //        lastNameText.setText("replace text with variable");
 //        dobText.setText("replace text with variable");
