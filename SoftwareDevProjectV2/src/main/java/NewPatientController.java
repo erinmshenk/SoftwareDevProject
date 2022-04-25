@@ -72,9 +72,9 @@ public class NewPatientController implements Initializable {
         String meds = allergiesInput.getText();
         boolean alcdrug = alcdrugInput.isSelected();
         
-        Registrar r = new Registrar();
-        r.insertPatient(nameFirst, nameLast, dob, address, zip, ssn, insurance, phys,
+        Registrar r = new Registrar(nameFirst, nameLast, dob, address, zip, ssn, insurance, phys,
             height, weight, vax1, vax2, symptom, allergy, meds, alcdrug);
+        r.insertPatient();
         
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/RegistrarMainPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
