@@ -96,6 +96,21 @@ public class PatientFileDisplayController implements Initializable {
         
         alcdrugText = new Text(Boolean.toString(alcdrug));
     }
+    
+    public PatientFileDisplayController(int vitals, int nightsStayed, String bloodpressure, String admittance, String observation, String pretreatment)
+    {
+        vitalsText = new Text(Integer.toString(vitals));
+        
+        nightsStayedText = new Text(Integer.toString(nightsStayed));
+        
+        bloodPressureText = new Text(bloodpressure);
+        
+        admittanceText = new Text(admittance);
+        
+        observationText = new Text(observation);
+        
+        pretreatmentText = new Text(pretreatment);  
+    }
 
     
     
