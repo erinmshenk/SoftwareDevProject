@@ -9,7 +9,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -18,61 +17,57 @@ public class PatientFileDisplayController implements Initializable {
     private Scene scene;
         
     @FXML
-    private TextField lastNameInput;
-    @FXML
-    private TextField dateOfBirthInput;
-    @FXML
-    private TextField addressInput;
-    @FXML
-    private TextField zipInput;
-    @FXML
-    private TextField ssnInput;
-    @FXML
-    private TextField insuranceInput;
-    @FXML
-    private TextField primaryPhysicianInput;
-    @FXML
-    private TextField heightInput;
-    @FXML
-    private TextField weightInput;
-    @FXML
-    private TextField vax1Input;
-    @FXML
-    private TextField vax2Input;
-    @FXML
-    private TextField symptomsInput;
-    @FXML
-    private TextField medicinesInput;
-    @FXML
-    private TextField allergiesInput;
-    @FXML
-    private CheckBox alcdrugInput;
-
-    @FXML
     private Text firstNameText;
+    @FXML
+    private Text lastNameText;
+    @FXML
+    private Text dobText;
+    @FXML
+    private Text addressText;
+    @FXML
+    private Text zipText;
+    @FXML
+    private Text ssnText;
+    @FXML
+    private Text insuranceText;
+    @FXML
+    private Text physText;
+    @FXML
+    private Text heightText;
+    @FXML
+    private Text weightText;
+    @FXML
+    private Text vax1Text;
+    @FXML
+    private Text vax2Text;
+    @FXML
+    private Text symptomText;
+    @FXML
+    private Text medsText;
+    @FXML
+    private Text allergyText;
+    @FXML
+    private Text alcdrugText;
+    @FXML
+    private Text vitalsText;
+    @FXML
+    private Text nightsStayedText;
+    @FXML
+    private Text bloodPressureText;
+    @FXML
+    private Text admittanceText;
+    @FXML
+    private Text observationText;
+    @FXML
+    private Text pretreatmentText;    
+
+    
     
 //Patient File Display Controller
     @FXML
-    private void submitNewForm(ActionEvent event) throws IOException {
-        String nameLast = lastNameInput.getText();
-        String dob = dateOfBirthInput.getText();
-        String address = addressInput.getText();
-        String zip = zipInput.getText();
-        String ssn = ssnInput.getText();
-        String insurance = insuranceInput.getText();
-        String phys = primaryPhysicianInput.getText();
-        int height = Integer.parseInt(heightInput.getText());
-        int weight = Integer.parseInt(weightInput.getText());
-        String vax1 = vax1Input.getText();
-        String vax2 = vax2Input.getText();
-        String symptom = symptomsInput.getText();
-        String allergy = medicinesInput.getText();
-        String meds = allergiesInput.getText();
-        boolean alcdrug = alcdrugInput.isSelected();
-        
-        
-        
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/RegistrarMainPage.fxml"));
+    private void editPatientData(ActionEvent event) throws IOException {
+
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/NurseMainPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setTitle("Registrar Main Page");
@@ -81,8 +76,8 @@ public class PatientFileDisplayController implements Initializable {
     }
 
     @FXML
-    private void cancelNewForm(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/RegistrarMainPage.fxml"));
+    private void returnToMainPage(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/NurseMainPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setTitle("Registrar Main Page");
@@ -92,8 +87,21 @@ public class PatientFileDisplayController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        firstNameText.setText("I'm a Label.");
-        // TODO
-    }    
-
+        firstNameText.setText("replace text with variable");
+        lastNameText.setText("replace text with variable");
+        dobText.setText("replace text with variable");
+        addressText.setText("replace text with variable");
+        zipText.setText("replace text with variable");
+        ssnText.setText("replace text with variable");
+        insuranceText.setText("replace text with variable");
+        physText.setText("replace text with variable");
+        heightText.setText("replace text with variable");
+        weightText.setText("replace text with variable");
+        vax1Text.setText("replace text with variable");
+        vax2Text.setText("replace text with variable");
+        symptomText.setText("replace text with variable");
+        allergyText.setText("replace text with variable");
+        medsText.setText("replace text with variable");
+        alcdrugText.setText("replace text with variable");
+    }
 }
