@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class NurseMainController extends PatientFileDisplayController implements Initializable {
+public class NurseMainController implements Initializable {
     private Stage stage;
     private Scene scene;
 
@@ -92,7 +92,7 @@ public class NurseMainController extends PatientFileDisplayController implements
         boolean patientFound = true;
         
         //need to load the data into the variables listed below
-        
+        //sample data
         String dob = "adam";
         String address = "adam";
         String zip = "adam";
@@ -113,27 +113,7 @@ public class NurseMainController extends PatientFileDisplayController implements
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
-            
-            firstNameText.setText(firstName);
-            lastNameText.setText(lastName);
-            lastNameText.setText("string in search button");
-            dobText.setText(dob);
-            addressText.setText(address);
-            zipText.setText(zip);
-            ssnText.setText(ssn);
-            insuranceText.setText(insurance);
-            physText.setText(phys);
-            heightText.setText(Integer.toString(height));
-            weightText.setText(Integer.toString(weight));
-            vax1Text.setText(vax1);
-            vax2Text.setText(vax2);
-            symptomText.setText(symptom);
-            allergyText.setText(allergy);
-            medsText.setText(meds);
-            alcdrugText.setText(Boolean.toString(alcdrug));
             stage.show();
-            firstNameText.setText("changed3?");            
-            //fill in table
         }
         else{
             patientSearchError.setText("Error in the Search Term");

@@ -85,16 +85,28 @@ public class PatientFileDisplayController implements Initializable {
         stage.show();
     }
 
-    public void rewriteTable(String firstName, String lastName){
-        firstNameText.setText(firstName);
-        lastNameText.setText(lastName);
+    public void updateTable(String patientID){
+        firstNameText.setText(patientID);
+        //fill the below lines with data based on from patientID
+        
+//        lastNameText.setText(lastName);
+//        dobText.setText(dob);
+//        addressText.setText(address);
+//        zipText.setText(zip);
+//        ssnText.setText(ssn);
+//        insuranceText.setText(insurance);
+//        physText.setText(phys);
+//        heightText.setText(Integer.toString(height));
+//        weightText.setText(Integer.toString(weight));
+//        vax1Text.setText(vax1);
+//        vax2Text.setText(vax2);
+//        symptomText.setText(symptom);
+//        allergyText.setText(allergy);
+//        medsText.setText(meds);
+//        alcdrugText.setText(Boolean.toString(alcdrug));
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        String name = "string in override";
-        String last = "string in override";
-        
-        rewriteTable(name, last);
 //        firstNameText.setText("replace text with variable");
 //        lastNameText.setText("replace text with variable");
 //        dobText.setText("replace text with variable");
