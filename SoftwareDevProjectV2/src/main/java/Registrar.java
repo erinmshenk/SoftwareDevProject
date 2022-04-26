@@ -38,6 +38,8 @@ public class Registrar
         boolean alcdrug = alcdrug;            
     }
     
+    public Registrar();
+    
     //should be called when sumbit button is pushed by registrar
     public void insertPatient()
     {
