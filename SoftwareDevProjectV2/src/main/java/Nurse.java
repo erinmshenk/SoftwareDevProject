@@ -25,17 +25,10 @@ public class Nurse{
         pretreatment = pretreatment;
     }
     
-    /**
-     *
-     */
     public Nurse()
     {
-        
     }
 
-    public String firstName;
-    public String lastName;
-    
     public String getPatientFirstName() {
         return "John";
     }
