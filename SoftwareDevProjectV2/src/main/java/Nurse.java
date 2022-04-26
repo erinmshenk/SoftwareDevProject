@@ -32,13 +32,6 @@ public class Nurse{
     {
         
     }
-    
-    Scanner keyboard = new Scanner(System.in);
-    
-    //user input to search for patient
-    String nameFirst = keyboard.nextLine();
-    String nameLast = keyboard.nextLine();
-    String ssn = keyboard.nextLine();
 
     
     //should be called when sumbit button is pushed by Nurse
