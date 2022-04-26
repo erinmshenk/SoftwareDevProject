@@ -50,8 +50,8 @@ public class Nurse{
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8888/hospitalSystem", "root", "root");
                 Statement stmt = con.createStatement();
                 //insert data inputed by Nurse
-                PreparedStatement prst = con.prepareStatement("INSERT INTO `hospitalSystem`.`Patient`\n" + "(" + "`vitals`,\n" + 
-                        "`nightsStayed`,\n" + "`bloodpressure`,\n" + "`admittance`,\n" + "`observation`,\n" + "`pretreatment`)\n" + 
+                PreparedStatement prst = con.prepareStatement("INSERT INTO `hospitalSystem`.`nursePhysicianRecord`\n" + "(" + "`vitals`,\n" + 
+                        "`nightsStayed`,\n" + "`bloodpressure`,\n" + "`admitted`,\n" + "`observation`,\n" + "`pretreatment`)\n" + 
                         "VALUES\n" + "(?, ?, ?, ?, ?, ?);");
                 
                 prst.setInt(1, vitals);
@@ -65,6 +65,23 @@ public class Nurse{
     
     public void passInfo()
     {
+        String i = "select vitals, nightsStayed, bloodpressure, admitted, observation, pretreatment nursePhysicianRecord";
+        
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8889/hospitalSystem", "root", "root");
+            
+            PreparedStatement prst = con.prepareStatement(i);
+            
+            prst.setInt(1, vitals);
+            prst.setInt(2, nightsStayed);
+            prst.setString(3, bloodpressure);
+            prst.setString(4, admittance);
+            prst.setString(5, observation);
+            prst.setString(6, pretreatment);
+            
+        }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
         PatientFileDisplayController p = new PatientFileDisplayController(vitals, nightsStayed, bloodpressure, admittance, observation, pretreatment);
     }
 }
