@@ -75,6 +75,7 @@ public class NurseMainController implements Initializable {
     @FXML
     public void nurseSearchButton(ActionEvent event) throws IOException {
         
+
         String patientID = patientIDSearch.getText();
         String firstName = firstNameSearch.getText();
         String lastName = lastNameSearch.getText();

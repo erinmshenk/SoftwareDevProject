@@ -8,13 +8,13 @@ import java.sql.Statement;
 
 public class Nurse{
     
-        int vitals;
-        int nightsStayed; 
-        String bloodpressure;
-        String admittance; 
-        String observation; 
-        String pretreatment;
-        
+    int vitals;
+    int nightsStayed; 
+    String bloodpressure;
+    String admittance; 
+    String observation; 
+    String pretreatment;
+
     public Nurse(int vitals, int nightsStayed, String bloodpressure, String admittance, String observation, String pretreatment)
     {
         vitals = vitals;
@@ -32,13 +32,23 @@ public class Nurse{
     {
         
     }
+
+    public String firstName;
+    public String lastName;
     
-    Scanner keyboard = new Scanner(System.in);
+    public String getPatientFirstName() {
+        return "John";
+    }
+    public String getPatientLastName() {
+        return "Smith";
+    }
+    public String getPatientTestReturn() {
+        return "test return";
+    }
+
+    
     
     //user input to search for patient
-    String nameFirst = keyboard.nextLine();
-    String nameLast = keyboard.nextLine();
-    String ssn = keyboard.nextLine();
 
     
     //should be called when sumbit button is pushed by Nurse

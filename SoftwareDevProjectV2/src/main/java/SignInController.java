@@ -23,6 +23,9 @@ public class SignInController implements Initializable {
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
+        
+
+        
         String user = usernameInput.getText();
         String pass = passwordInput.getText();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

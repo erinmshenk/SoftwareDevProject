@@ -143,17 +143,23 @@ public class PatientFileDisplayController implements Initializable {
     public void updateTable(String patientID){
         //fill the below lines with data based on from patientID
         
-        Registrar r = new Registrar();
-        Nurse n = new Nurse();
-        
-        r.passInfo();
-        n.passInfo();
+        Nurse ns = new Nurse();
+        String firstName = ns.getPatientFirstName();
+        String lastName = ns.getPatientLastName();
+        String dob = ns.getPatientTestReturn();
 
-        String firstName = "adam";
         firstNameText.setText(firstName);
+        lastNameText.setText(lastName);
+        dobText.setText(dob);
         
-//        lastNameText.setText(lastName);
-//        dobText.setText(dob);
+        
+//        Registrar r = new Registrar();
+//        Nurse n = new Nurse();
+//        
+//        r.passInfo();
+//        n.passInfo();
+
+        
 //        addressText.setText(address);
 //        zipText.setText(zip);
 //        ssnText.setText(ssn);
