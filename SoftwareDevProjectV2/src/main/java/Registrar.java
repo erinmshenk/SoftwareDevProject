@@ -103,7 +103,6 @@ public class Registrar
         {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8889/hospitalSystem", "root", "root");
-            Statement stmt = con.createStatement();
             
             PreparedStatement prst = con.prepareStatement(i);
             
