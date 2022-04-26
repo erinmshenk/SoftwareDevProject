@@ -97,6 +97,35 @@ public class Registrar
     
     public void passInfo()
     {
+        String i = "select * from Patient";
+        
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8889/hospitalSystem", "root", "root");
+            Statement stmt = con.createStatement();
+            
+            PreparedStatement prst = con.prepareStatement(i);
+            
+            prst.setString(1, nameFirst);
+            prst.setString(2, nameLast);
+            prst.setString(3, dob);
+            prst.setString(4, address);
+            prst.setString(5, zip);
+            prst.setString(6, ssn);
+            prst.setString(7, insurance);
+            prst.setString(8, phys);
+            prst.setInt(9, height);
+            prst.setInt(10, weight);
+            prst.setString(11, vax1);
+            prst.setString(12, vax2);
+            prst.setString(13, symptom);
+            prst.setString(14, allergy);
+            prst.setString(15, meds);
+            prst.setBoolean(16, alcdrug);
+            
+        }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
+        
         PatientFileDisplayController p = new PatientFileDisplayController(nameFirst, nameLast, dob, address, zip, ssn, insurance, phys,
             height, weight, vax1, vax2, symptom, allergy, meds, alcdrug);
     }
