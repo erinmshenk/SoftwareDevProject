@@ -35,8 +35,8 @@ public class Nurse{
     public String getPatientLastName() {
         return "Smith";
     }
-    public String getPatientTestReturn() {
-        return "test return";
+    public String getPatientDOB() {
+        return "08/22/2000";
     }
 
 

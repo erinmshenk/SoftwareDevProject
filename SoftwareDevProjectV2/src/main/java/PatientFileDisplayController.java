@@ -146,7 +146,7 @@ public class PatientFileDisplayController implements Initializable {
         Nurse ns = new Nurse();
         String firstName = ns.getPatientFirstName();
         String lastName = ns.getPatientLastName();
-        String dob = ns.getPatientTestReturn();
+        String dob = ns.getPatientDOB();
 
         firstNameText.setText(firstName);
         lastNameText.setText(lastName);
