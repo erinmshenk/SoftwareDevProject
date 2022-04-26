@@ -138,6 +138,12 @@ public class PatientFileDisplayController implements Initializable {
 
     public void updateTable(String patientID){
         //fill the below lines with data based on from patientID
+        
+        Registrar r = new Registrar();
+        Nurse n = new Nurse();
+        
+        r.passInfo();
+        n.passInfo();
 
         String firstName = "adam";
         firstNameText.setText(firstName);
