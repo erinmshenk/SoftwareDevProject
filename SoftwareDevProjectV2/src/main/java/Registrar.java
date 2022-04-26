@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.*;
 import java.sql.Statement;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -106,22 +107,27 @@ public class Registrar
             
             PreparedStatement prst = con.prepareStatement(i);
             
-            prst.setString(1, nameFirst);
-            prst.setString(2, nameLast);
-            prst.setString(3, dob);
-            prst.setString(4, address);
-            prst.setString(5, zip);
-            prst.setString(6, ssn);
-            prst.setString(7, insurance);
-            prst.setString(8, phys);
-            prst.setInt(9, height);
-            prst.setInt(10, weight);
-            prst.setString(11, vax1);
-            prst.setString(12, vax2);
-            prst.setString(13, symptom);
-            prst.setString(14, allergy);
-            prst.setString(15, meds);
-            prst.setBoolean(16, alcdrug);
+            ResultSet rs = prst.executeQuery();
+            
+            if(rs.next())
+            {
+                nameFirst = rs.getString(1);
+                nameLast = rs.getString(2);
+                dob = rs.getString(3);
+                address = rs.getString(4);
+                zip = rs.getString(5);
+                ssn = rs.getString(6);
+                insurance = rs.getString(7);
+                phys = rs.getString(8);
+                height = rs.getInt(9);
+                weight = rs.getInt(10);
+                vax1 = rs.getString(11);
+                vax2 = rs.getString(12);
+                symptom = rs.getString(13);
+                allergy = rs.getString(14);
+                meds = rs.getString(15);
+                alcdrug = rs.getBoolean(16);
+            }
             
         }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
         
