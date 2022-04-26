@@ -74,12 +74,17 @@ public class Nurse{
             
             PreparedStatement prst = con.prepareStatement(i);
             
-            prst.setInt(1, vitals);
-            prst.setInt(2, nightsStayed);
-            prst.setString(3, bloodpressure);
-            prst.setString(4, admittance);
-            prst.setString(5, observation);
-            prst.setString(6, pretreatment);
+            ResultSet rs = prst.executeQuery();
+            
+            if(rs.next())
+            {
+                vitals = rs.getInt(1);
+                nightsStayed = rs.getInt(2);
+                bloodpressure = rs.getString(3);
+                admittance = rs.getString(4);
+                observation = rs.getString(5);
+                pretreatment = rs.getString(6);
+            }
             
         }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
         PatientFileDisplayController p = new PatientFileDisplayController(vitals, nightsStayed, bloodpressure, admittance, observation, pretreatment);
