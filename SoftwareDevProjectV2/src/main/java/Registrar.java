@@ -16,29 +16,48 @@ import java.sql.Statement;
  */
 public class Registrar
 {
-  
+        String nameFirst;
+        String nameLast;
+        String dob; 
+        String address; 
+        String zip; 
+        String ssn; 
+        String insurance;
+        String phys;
+        int height; 
+        int weight;
+        String vax1;
+        String vax2;
+        String symptom;
+        String allergy; 
+        String meds;
+        boolean alcdrug; 
+        
     public Registrar(String nameFirst, String nameLast, String dob, String address, String zip, String ssn, String insurance, String phys,
             int height, int weight, String vax1, String vax2, String symptom, String allergy, String meds, boolean alcdrug)
     {
-        String nameFirst = nameFirst;
-        String nameLast = nameLast;
-        String dob = dob; 
-        String address = address; 
-        String zip = zip; 
-        String ssn = snn; 
-        String insurance = insurance;
-        String phys = phys;
-        int height = height; 
-        int weight = weight;
-        String vax1 = vax1;
-        String vax2 = vax2;
-        String symptom = symptom;
-        String allergy = allergy; 
-        String meds = meds;
-        boolean alcdrug = alcdrug;            
+        nameFirst = nameFirst;
+        nameLast = nameLast;
+        dob = dob; 
+        address = address; 
+        zip = zip; 
+        ssn = ssn; 
+        insurance = insurance;
+        phys = phys;
+        height = height; 
+        weight = weight;
+        vax1 = vax1;
+        vax2 = vax2;
+        symptom = symptom;
+        allergy = allergy; 
+        meds = meds;
+        alcdrug = alcdrug;            
     }
     
-    public Registrar();
+    public Registrar()
+    {
+        
+    }
     
     //should be called when sumbit button is pushed by registrar
     public void insertPatient()
