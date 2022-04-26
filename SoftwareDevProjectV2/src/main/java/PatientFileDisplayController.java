@@ -111,7 +111,11 @@ public class PatientFileDisplayController implements Initializable {
         
         pretreatmentText = new Text(pretreatment);  
     }
-
+    
+    public PatientFileDisplayController()
+    {
+        
+    }
     
     
 //Patient File Display Controller
