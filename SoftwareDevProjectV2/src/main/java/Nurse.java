@@ -42,6 +42,35 @@ public class Nurse{
         
     }
     
+    public Boolean searchPatient()
+    {
+        String sp = "select * from patient where firstName = " + nameFirst + " and lastName = " + nameLast + " and ssn = " + ssn + ";";
+        int t = 0;
+        
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8889/hospitalSystem", "root", "root");
+            Statement stmt = con.createStatement();
+            
+            PreparedStatement prst = con.prepareStatement(sp);
+            
+            ResultSet rs = prst.executeQuery();
+            
+            if(rs.absolute(1))
+            {
+                t = 1;
+            }
+            
+            else
+            {
+                t = 0;
+            }
+        }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
+        
+        return t == 1;
+    }
+    
     //variables to get results from patient file
     /**
     String insurance = insurance;
