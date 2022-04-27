@@ -275,8 +275,8 @@ public class Nurse{
             
             if(rs.next())
             {
-                vitals = rs.getString(1);
-                nightsStayed = rs.getString(2);
+                vitals = rs.getInt(1);
+                nightsStayed = rs.getInt(2);
                 bloodpressure = rs.getString(3);
                 admittance = rs.getString(4);
                 observation = rs.getString(5);
