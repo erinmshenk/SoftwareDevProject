@@ -43,7 +43,7 @@ public class Nurse{
     }
     
     //searches for patient file
-    public Boolean searchPatient()
+    public Boolean searchPatient(String nameFirst, String nameLast, String ssn)
     {
         String sp = "select * from patient where firstName = '" + nameFirst + "' and lastName = '" + nameLast + "' and ssn = '" + ssn + "';";
        
@@ -53,7 +53,11 @@ public class Nurse{
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8889/hospitalSystem", "root", "root");
             Statement stmt = con.createStatement();
             
-            PreparedStatement prst = con.prepareStatement(sp);
+            PreparedStatement prst = con.prepareStatement("select * from Patient where firstName = ? and lastName = ? and ssn = ?;");
+            
+            prst.setString(1, nameFirst);
+            prst.setString(2, nameLast);
+            prst.setString(3, ssn);
             
             ResultSet rs = prst.executeQuery();
             
@@ -107,7 +111,10 @@ public class Nurse{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8889/hospitalSystem", "root", "root");
             
-            PreparedStatement prst = con.prepareStatement(i);
+            PreparedStatement prst = con.prepareStatement("select vitals, nightsStayed, bloodpressure, admitted, observation, pretreatment nursePhysicianRecord where firstName = ? and lastName = ? and ssn = ?;");
+            prst.setString(1, nameFirst1);
+            prst.setString(2, nameLast1);
+            prst.setString(3, ssn1);
             
             ResultSet rs = prst.executeQuery();
             
