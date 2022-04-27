@@ -37,22 +37,22 @@ public class Registrar
     public Registrar(String nameFirst, String nameLast, String dob, String address, String zip, String ssn, String insurance, String phys,
             int height, int weight, String vax1, String vax2, String symptom, String allergy, String meds, boolean alcdrug)
     {
-        nameFirst = nameFirst;
-        nameLast = nameLast;
-        dob = dob; 
-        address = address; 
-        zip = zip; 
-        ssn = ssn; 
-        insurance = insurance;
-        phys = phys;
-        height = height; 
-        weight = weight;
-        vax1 = vax1;
-        vax2 = vax2;
-        symptom = symptom;
-        allergy = allergy; 
-        meds = meds;
-        alcdrug = alcdrug;            
+        this.nameFirst = nameFirst;
+        this.nameLast = nameLast;
+        this.dob = dob; 
+        this.address = address; 
+        this.zip = zip; 
+        this.ssn = ssn; 
+        this.insurance = insurance;
+        this.phys = phys;
+        this.height = height; 
+        this.weight = weight;
+        this.vax1 = vax1;
+        this.vax2 = vax2;
+        this.symptom = symptom;
+        this.allergy = allergy; 
+        this.meds = meds;
+        this.alcdrug = alcdrug;            
     }
     
     public Registrar()
@@ -132,6 +132,9 @@ public class Registrar
         }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
         
         PatientFileDisplayController p = new PatientFileDisplayController(nameFirst, nameLast, dob, address, zip, ssn, insurance, phys,
+            height, weight, vax1, vax2, symptom, allergy, meds, alcdrug);
+        
+        NurseMainController nc = new NurseMainController(nameFirst, nameLast, dob, address, zip, ssn, insurance, phys,
             height, weight, vax1, vax2, symptom, allergy, meds, alcdrug);
     }
 }
