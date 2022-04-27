@@ -137,7 +137,7 @@ public class NurseMainController implements Initializable {
         //if the searched patient exists, set the below variables to true
         //if the search does not exist, set them to false
         boolean patientFound;
-        patientFound = n.searchPatient();
+        patientFound = n.searchPatient(firstName, lastName, patientSsn);
 
 
         if (patientFound == true){
