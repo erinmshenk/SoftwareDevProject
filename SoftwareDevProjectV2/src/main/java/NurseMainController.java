@@ -123,8 +123,7 @@ public class NurseMainController implements Initializable {
         
         //sends search info to nurse
         Nurse n = new Nurse(firstName, lastName, patientSsn);
-        
-        Registrar r = new Registrar();
+
 
         System.out.println(patientSsn);
         System.out.println(firstName);
