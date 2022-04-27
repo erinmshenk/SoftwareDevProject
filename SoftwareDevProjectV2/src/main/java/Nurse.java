@@ -28,9 +28,15 @@ public class Nurse{
     Scanner keyboard = new Scanner(System.in);
  
     //user input to search for patient
-    String nameFirst = keyboard.nextLine();
-    String nameLast = keyboard.nextLine();
-    String ssn = keyboard.nextLine();
+//    String nameFirst = keyboard.nextLine();
+ //   String nameLast = keyboard.nextLine();
+  //  String ssn = keyboard.nextLine();
+    
+    //do not delete
+    public Nurse()
+    {
+        
+    }
     
     //variables to get results from patient file
     String insurance = insurance;
