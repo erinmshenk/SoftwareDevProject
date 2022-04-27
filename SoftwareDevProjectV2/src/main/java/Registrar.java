@@ -130,11 +130,5 @@ public class Registrar
             }
             
         }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
-        
-        PatientFileDisplayController p = new PatientFileDisplayController(nameFirst, nameLast, dob, address, zip, ssn, insurance, phys,
-            height, weight, vax1, vax2, symptom, allergy, meds, alcdrug);
-        
-        NurseMainController nc = new NurseMainController(nameFirst, nameLast, dob, address, zip, ssn, insurance, phys,
-            height, weight, vax1, vax2, symptom, allergy, meds, alcdrug);
     }
 }
