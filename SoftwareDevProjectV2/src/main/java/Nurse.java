@@ -42,6 +42,7 @@ public class Nurse{
         
     }
     
+    //searches for patient file
     public Boolean searchPatient()
     {
         String sp = "select * from patient where firstName = " + nameFirst + " and lastName = " + nameLast + " and ssn = " + ssn + ";";
