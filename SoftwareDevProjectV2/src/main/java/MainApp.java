@@ -32,11 +32,11 @@ public class MainApp extends Application {
      *
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
         launch(args);
 
         //connect to database
-/**        try {
+        try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8888/", "root", "root");
             Statement stmt = con.createStatement();
@@ -162,9 +162,9 @@ public class MainApp extends Application {
 "                               (AUTO_INCREMENT,\n" +
 "                               'stool test',\n" +
 "                               175);");
-               
+               **/
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e);
-        }**/
+        }
     }
 }
