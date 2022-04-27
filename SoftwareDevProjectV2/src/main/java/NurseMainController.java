@@ -139,28 +139,7 @@ public class NurseMainController implements Initializable {
         //if the search does not exist, set them to false
         boolean patientFound;
         patientFound = n.searchPatient();
-        
-        //if(patientFound == true)
-        //{
-            r.passInfo();
-            //need to load the data into the variables listed below
-            //sample data
-            /**
-            String dob = r.dob;
-            String address = r.address;
-            String zip = r.zip;
-            String ssn = "adam";
-            String insurance = "adam";
-            String phys = "adam";
-            int height = 10;
-            int weight = 10;
-            String vax1 = "adam";
-            String vax2 = "adam";
-            String symptom = "adam";
-            String allergy = "adam";
-            String meds = "adam";
-            boolean alcdrug = true;
-            * **/
+            
             
             firstNameText = new Text(r.nameFirst);       
             lastNameText = new Text(r.nameLast);
@@ -178,7 +157,7 @@ public class NurseMainController implements Initializable {
             medsText = new Text(r.meds);
             allergyText = new Text(r.allergy);
             alcdrugText = new Text(Boolean.toString(r.alcdrug));
-        //}
+
 
         if (patientFound == true){
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/PatientFileDisplay.fxml"));
