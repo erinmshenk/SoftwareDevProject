@@ -145,6 +145,7 @@ public class NurseMainController implements Initializable {
             r.passInfo();
             //need to load the data into the variables listed below
             //sample data
+            /**
             String dob = r.dob;
             String address = r.address;
             String zip = r.zip;
@@ -159,6 +160,24 @@ public class NurseMainController implements Initializable {
             String allergy = "adam";
             String meds = "adam";
             boolean alcdrug = true;
+            * **/
+            
+            firstNameText = new Text(r.nameFirst);       
+            lastNameText = new Text(r.nameLast);
+            dobText = new Text(r.dob);
+            addressText = new Text(r.address);
+            zipText = new Text(r.zip);
+            ssnText = new Text(r.ssn);
+            insuranceText = new Text(r.insurance);
+            physText = new Text(r.phys);
+            heightText = new Text(Integer.toString(r.height));
+            weightText = new Text(Integer.toString(r.weight));
+            vax1Text = new Text(r.vax1);
+            vax2Text = new Text(r.vax2);
+            symptomText = new Text(r.symptom);
+            medsText = new Text(r.meds);
+            allergyText = new Text(r.allergy);
+            alcdrugText = new Text(Boolean.toString(r.alcdrug));
         }
 
         if (patientFound == true){
