@@ -45,7 +45,7 @@ public class Nurse{
     //searches for patient file
     public Boolean searchPatient()
     {
-        String sp = "select * from patient where firstName = " + nameFirst + " and lastName = " + nameLast + " and ssn = " + ssn + ";";
+        String sp = "select * from patient where firstName = '" + nameFirst + "' and lastName = '" + nameLast + "' and ssn = '" + ssn + "';";
         int t = 0;
         
         try
@@ -61,15 +61,16 @@ public class Nurse{
             if(rs.absolute(1))
             {
                 t = 1;
+                return true;
             }
             
             else
             {
-                t = 0;
+                return false;
             }
         }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
         
-        return t == 1;
+        return false;
     }
     
     //variables to get results from patient file
