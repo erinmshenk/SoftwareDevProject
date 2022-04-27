@@ -44,7 +44,7 @@ public class SignInController implements Initializable {
         }
         else if (user.equals("billing") && pass.equals("root")){
             root = FXMLLoader.load(getClass().getResource("/fxml/BillingMainPage.fxml"));
-            stage.setTitle("Registrar Main Page");
+            stage.setTitle("Billing Main Page");
         }
         else {
             root = FXMLLoader.load(getClass().getResource("/fxml/SignInPage.fxml"));

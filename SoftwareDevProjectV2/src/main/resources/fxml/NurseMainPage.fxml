@@ -18,10 +18,10 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="160.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient ID:" />
+      <Text layoutX="160.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient SSN:" />
       <Text layoutX="158.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" />
       <Text layoutX="158.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
-      <TextField fx:id="patientIDSearch" layoutX="227.0" layoutY="219.0" prefHeight="25.0" prefWidth="114.0" />
+      <TextField fx:id="patientSSNSearch" layoutX="227.0" layoutY="219.0" prefHeight="25.0" prefWidth="114.0" />
       <TextField fx:id="firstNameSearch" layoutX="228.0" layoutY="253.0" prefHeight="25.0" prefWidth="114.0" />
       <TextField fx:id="lastNameSearch" layoutX="228.0" layoutY="288.0" prefHeight="25.0" prefWidth="114.0" />
       <Button fx:id="nurseSearchButton" layoutX="165.0" layoutY="337.0" onAction="#nurseSearchButton" text="Submit" />

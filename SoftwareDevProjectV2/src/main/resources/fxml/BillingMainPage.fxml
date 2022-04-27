@@ -8,18 +8,24 @@
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BillingMainController">
    <children>
-      <Text layoutX="160.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Billing Department!">
+      <Text layoutX="199.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Billing!">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="107.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search the Database:  ">
+      <Text layoutX="187.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search the Database">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField layoutX="244.0" layoutY="227.0" />
-      <Button layoutX="173.0" layoutY="268.0" mnemonicParsing="false" text="Submit" />
-      <Button fx:id="signOutButton" layoutX="266.0" layoutY="268.0" onAction="#signOut" text="Sign Out" />
+      <Text layoutX="160.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient SSN:" />
+      <Text layoutX="158.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" />
+      <Text layoutX="158.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
+      <TextField fx:id="patientSSNSearch" layoutX="227.0" layoutY="219.0" prefHeight="25.0" prefWidth="114.0" />
+      <TextField fx:id="firstNameSearch" layoutX="228.0" layoutY="253.0" prefHeight="25.0" prefWidth="114.0" />
+      <TextField fx:id="lastNameSearch" layoutX="228.0" layoutY="288.0" prefHeight="25.0" prefWidth="114.0" />
+      <Button fx:id="nurseSearchButton" layoutX="165.0" layoutY="337.0" onAction="#nurseSearchButton" text="Submit" />
+      <Button fx:id="signOutButton" layoutX="272.0" layoutY="337.0" onAction="#signOut" text="Sign Out" />
+      <Text fx:id="patientSearchError" layoutX="186.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>

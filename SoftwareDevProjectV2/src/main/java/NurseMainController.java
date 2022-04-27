@@ -17,7 +17,7 @@ public class NurseMainController implements Initializable {
     private Scene scene;
 
     @FXML
-    private TextField patientIDSearch;
+    private TextField patientSSNSearch;
     @FXML
     private TextField firstNameSearch;
     @FXML
@@ -76,11 +76,11 @@ public class NurseMainController implements Initializable {
     public void nurseSearchButton(ActionEvent event) throws IOException {
         
 
-        String patientID = patientIDSearch.getText();
+        String patientSSN = patientSSNSearch.getText();
         String firstName = firstNameSearch.getText();
         String lastName = lastNameSearch.getText();
 
-        System.out.println(patientID);
+        System.out.println(patientSSN);
         System.out.println(firstName);
         System.out.println(lastName);
         

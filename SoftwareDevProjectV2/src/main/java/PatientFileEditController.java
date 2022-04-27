@@ -97,15 +97,21 @@ public class PatientFileEditController implements Initializable {
         stage.show();
     }
     public void updateEditTable(String patientID){
-        Nurse ns = new Nurse();
-        String firstName = ns.getPatientFirstName();
-        String lastName = ns.getPatientLastName();
-        String dob = ns.getPatientDOB();
-        boolean alcdrug = ns.getPatientAlcDrug();
-        firstNameTextField.setText(firstName);
-        lastNameTextField.setText(lastName);
-        dobTextField.setText(dob);
-        alcdrugCheckBox.setSelected(alcdrug);
+//        Registrar r = new Registrar();
+//        Nurse n = new Nurse();
+//        
+//        r.passInfo();
+//        n.passInfo();
+
+//        Nurse ns = new Nurse();
+//        String firstName = ns.getPatientFirstName();
+//        String lastName = ns.getPatientLastName();
+//        String dob = ns.getPatientDOB();
+//        boolean alcdrug = ns.getPatientAlcDrug();
+//        firstNameTextField.setText(firstName);
+//        lastNameTextField.setText(lastName);
+//        dobTextField.setText(dob);
+//        alcdrugCheckBox.setSelected(alcdrug);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
