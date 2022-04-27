@@ -112,7 +112,7 @@ public class BillingSearchDisplayController implements Initializable {
         pretreatmentText = new Text(pretreatment);  
     }
     
-    public PatientFileDisplayController()
+    public BillingSearchDisplayController()
     {
         
     }
