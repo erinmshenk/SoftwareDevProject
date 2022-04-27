@@ -59,63 +59,66 @@ public class PatientFileDisplayController implements Initializable {
     @FXML
     private Text observationText;
     @FXML
-    private Text pretreatmentText;    
+    private Text pretreatmentText;  
     
-    public PatientFileDisplayController(String nameFirst, String nameLast, String dob, String address, String zip, String ssn, String insurance, String phys,
-            int height, int weight, String vax1, String vax2, String symptom, String allergy, String meds, boolean alcdrug)
+    Registrar r = new Registrar();
+    
+    Nurse n = new Nurse();
+    
+    
+    public PatientFileDisplayController()
     {
-        firstNameText = new Text(nameFirst);
+        //to get most up to date data
+        r.passInfo();
         
-        lastNameText = new Text(nameLast);
+        firstNameText = new Text(r.nameFirst);
         
-        dobText = new Text(dob);
+        lastNameText = new Text(r.nameLast);
         
-        addressText = new Text(address);
+        dobText = new Text(r.dob);
         
-        zipText = new Text(zip);
+        addressText = new Text(r.address);
         
-        ssnText = new Text(ssn);
+        zipText = new Text(r.zip);
         
-        insuranceText = new Text(insurance);
+        ssnText = new Text(r.ssn);
         
-        physText = new Text(phys);
+        insuranceText = new Text(r.insurance);
         
-        heightText = new Text(Integer.toString(height));
+        physText = new Text(r.phys);
         
-        weightText = new Text(Integer.toString(weight));
+        heightText = new Text(Integer.toString(r.height));
         
-        vax1Text = new Text(vax1);
+        weightText = new Text(Integer.toString(r.weight));
+        
+        vax1Text = new Text(r.vax1);
        
-        vax2Text = new Text(vax2);
+        vax2Text = new Text(r.vax2);
         
-        symptomText = new Text(symptom);
+        symptomText = new Text(r.symptom);
         
-        medsText = new Text(meds);
+        medsText = new Text(r.meds);
         
-        allergyText = new Text(allergy);
+        allergyText = new Text(r.allergy);
         
-        alcdrugText = new Text(Boolean.toString(alcdrug));
+        alcdrugText = new Text(Boolean.toString(r.alcdrug));
     }
     
     public PatientFileDisplayController(int vitals, int nightsStayed, String bloodpressure, String admittance, String observation, String pretreatment)
     {
-        vitalsText = new Text(Integer.toString(vitals));
+        vitalsText = new Text(Integer.toString(n.vitals));
         
-        nightsStayedText = new Text(Integer.toString(nightsStayed));
+        nightsStayedText = new Text(Integer.toString(n.nightsStayed));
         
-        bloodPressureText = new Text(bloodpressure);
+        bloodPressureText = new Text(n.bloodpressure);
         
-        admittanceText = new Text(admittance);
+        admittanceText = new Text(n.admittance);
         
-        observationText = new Text(observation);
+        observationText = new Text(n.observation);
         
-        pretreatmentText = new Text(pretreatment);  
+        pretreatmentText = new Text(n.pretreatment);  
     }
     
-    public PatientFileDisplayController()
-    {
-        
-    }
     
     
 //Patient File Display Controller
