@@ -136,40 +136,40 @@ public class PatientFileDisplayController implements Initializable {
         stage.show();
     }
 
-    public void updateDisplayTable(String patientID){
+    public void updateDisplayTable(){
         //fill the below lines with data based on from patientID
-        
-        //Nurse ns = new Nurse();
-        //String firstName = ns.getPatientFirstName();
-        //String lastName = ns.getPatientLastName();
-        //String dob = ns.getPatientDOB();
-        //boolean alcdrug = ns.getPatientAlcDrug();
 
-        //firstNameText.setText(firstName);
-        //lastNameText.setText(lastName);
-        //dobText.setText(dob);
-        //alcdrugText.setText(Boolean.toString(alcdrug));
-//        Registrar r = new Registrar();
-//        Nurse n = new Nurse();
-//        
-//        r.passInfo();
-//        n.passInfo();
-//        addressText.setText(address);
-//        zipText.setText(zip);
-//        ssnText.setText(ssn);
-//        insuranceText.setText(insurance);
-//        physText.setText(phys);
-//        heightText.setText(Integer.toString(height));
-//        weightText.setText(Integer.toString(weight));
-//        vax1Text.setText(vax1);
-//        vax2Text.setText(vax2);
-//        symptomText.setText(symptom);
-//        allergyText.setText(allergy);
-//        medsText.setText(meds);
-//        alcdrugText.setText(Boolean.toString(alcdrug));
+        Registrar r = new Registrar();
+        Nurse n = new Nurse();
+        
+        r.passInfo();
+        n.passInfo();
+        firstNameText.setText(r.nameFirst);
+        lastNameText.setText(r.nameLast);
+        dobText.setText(r.dob);
+        addressText.setText(r.address);
+        zipText.setText(r.zip);
+        ssnText.setText(r.ssn);
+        insuranceText.setText(r.insurance);
+        physText.setText(r.phys);
+        heightText.setText(Integer.toString(r.height));
+        weightText.setText(Integer.toString(r.weight));
+        vax1Text.setText(r.vax1);
+        vax2Text.setText(r.vax2);
+        symptomText.setText(r.symptom);
+        allergyText.setText(r.allergy);
+        medsText.setText(r.meds);
+        alcdrugText.setText(Boolean.toString(r.alcdrug));
+        vitalsText.setText(Integer.toString(n.vitals));
+        nightsStayedText.setText(Integer.toString(n.nightsStayed));
+        bloodPressureText.setText(n.bloodpressure);
+        admittanceText.setText(n.admittance);
+        pretreatmentText.setText(n.pretreatment);
+        observationText.setText(n.observation);
+        
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        updateDisplayTable("patientID");
+        updateDisplayTable();
     }
 }
