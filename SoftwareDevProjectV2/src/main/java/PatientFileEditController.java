@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -17,37 +18,37 @@ public class PatientFileEditController implements Initializable {
     private Scene scene;
         
     @FXML
-    private Text firstNameText;
+    private TextField firstNameTextField;
     @FXML
-    private Text lastNameText;
+    private TextField lastNameTextField;
     @FXML
-    private Text dobText;
+    private TextField dobTextField;
     @FXML
-    private Text addressText;
+    private TextField addressTextField;
     @FXML
-    private Text zipText;
+    private TextField zipTextField;
     @FXML
-    private Text ssnText;
+    private TextField ssnTextField;
     @FXML
-    private Text insuranceText;
+    private TextField insuranceTextField;
     @FXML
-    private Text physText;
+    private TextField physTextField;
     @FXML
-    private Text heightText;
+    private TextField heightTextField;
     @FXML
-    private Text weightText;
+    private TextField weightTextField;
     @FXML
-    private Text vax1Text;
+    private TextField vax1TextField;
     @FXML
-    private Text vax2Text;
+    private TextField vax2TextField;
     @FXML
-    private Text symptomText;
+    private TextField symptomTextField;
     @FXML
-    private Text medsText;
+    private TextField medsTextField;
     @FXML
-    private Text allergyText;
+    private TextField allergyTextField;
     @FXML
-    private Text alcdrugText;
+    private CheckBox alcdrugTextField;
     
 //Patient File Display Controller
     @FXML
@@ -73,5 +74,13 @@ public class PatientFileEditController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Nurse ns = new Nurse();
+        String firstName = ns.getPatientFirstName();
+        String lastName = ns.getPatientLastName();
+        String dob = ns.getPatientDOB();
+        firstNameTextField.setText(firstName);
+        lastNameTextField.setText(lastName);
+        dobTextField.setText(dob);
+
     }
 }

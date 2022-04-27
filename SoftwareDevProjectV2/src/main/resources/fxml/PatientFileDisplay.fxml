@@ -24,6 +24,8 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Text fx:id="firstNameText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" />
@@ -41,7 +43,13 @@
             <Text fx:id="symptomText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.rowIndex="4" />
             <Text fx:id="allergyText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Text fx:id="medsText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Text fx:id="alcdrugText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Text fx:id="alcdrugText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.rowIndex="5" />
+            <Text fx:id="vitalsText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Text fx:id="nightsStayedText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Text fx:id="bloodPressureText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.rowIndex="6" />
+            <Text fx:id="admittanceText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Text fx:id="pretreatmentText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Text fx:id="observationsText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="7" />
          </children>
       </GridPane>
       <Label layoutX="103.0" layoutY="80.0" text="Search Display of Patient Information">
@@ -49,7 +57,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="editPatientData" layoutX="110.0" layoutY="330.0" onAction="#editPatientData" text="Edit Patient Data" />
-      <Button fx:id="returnToMainPage" layoutX="264.0" layoutY="330.0" onAction="#returnToMainPage" text="Return To Main Page" />
+      <Button fx:id="editPatientData" layoutX="109.0" layoutY="404.0" onAction="#editPatientData" text="Edit Patient Data" />
+      <Button fx:id="returnToMainPage" layoutX="263.0" layoutY="404.0" onAction="#returnToMainPage" text="Return To Main Page" />
    </children>
 </AnchorPane>

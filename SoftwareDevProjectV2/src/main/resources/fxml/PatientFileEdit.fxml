@@ -26,24 +26,24 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="2" />
-            <TextField GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <TextField GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <TextField GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <TextField GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <TextField GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <TextField fx:id="firstNameTextField" disable = "true" text="missing data"/>
+            <TextField fx:id="lastNameTextField" disable = "true" GridPane.columnIndex="1" text="missing data"/>
+            <TextField fx:id="dobTextField" disable = "true" GridPane.columnIndex="2" text="missing data"/>
+            <TextField fx:id="addressTextField" GridPane.rowIndex="1" text="missing data"/>
+            <TextField fx:id="zipTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" text="missing data"/>
+            <TextField fx:id="ssnTextField" disable = "true" GridPane.columnIndex="2" GridPane.rowIndex="1" text="missing data"/>
+            <TextField fx:id="insuranceTextField" GridPane.rowIndex="2" text="missing data"/>
+            <TextField fx:id="physTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" text="missing data"/>
+            <TextField fx:id="heightTextField" GridPane.columnIndex="2" GridPane.rowIndex="2" text="missing data"/>
+            <TextField fx:id="weightTextField" GridPane.rowIndex="3" text="missing data"/>
+            <TextField fx:id="vax1TextField" GridPane.columnIndex="1" GridPane.rowIndex="3" text="missing data"/>
+            <TextField fx:id="vax2TextField" GridPane.columnIndex="2" GridPane.rowIndex="3" text="missing data"/>
+            <TextField fx:id="symptomTextField" GridPane.rowIndex="4" text="missing data"/>
+            <TextField fx:id="allergyTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" text="missing data"/>
+            <TextField fx:id="medsTextField" GridPane.columnIndex="2" GridPane.rowIndex="4" text="missing data"/>
+            <TextField fx:id="alcdrugCheckBox" GridPane.rowIndex="5" text="missing data"/>
+            <TextField fx:id="vitalsTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" text="missing data"/>
+            <TextField fx:id="nightsStayedTextField" GridPane.columnIndex="2" GridPane.rowIndex="5" text="missing data"/>
          </children>
       </GridPane>
       <Button fx:id="editPatientData" layoutX="110.0" layoutY="330.0" onAction="#editPatientData" text="Edit Patient Data" />
