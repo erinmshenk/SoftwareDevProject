@@ -284,6 +284,5 @@ public class Nurse{
             }
             
         }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
-        PatientFileDisplayController p = new PatientFileDisplayController(vitals, nightsStayed, bloodpressure, admittance, observation, pretreatment);
     }
 }
