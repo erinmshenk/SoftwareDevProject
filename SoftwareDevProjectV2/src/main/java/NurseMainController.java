@@ -17,7 +17,7 @@ public class NurseMainController implements Initializable {
     private Scene scene;
 
     @FXML
-    private TextField patientIDSearch;
+    private TextField patientSsnSearch;
     @FXML
     private TextField firstNameSearch;
     @FXML
@@ -68,7 +68,48 @@ public class NurseMainController implements Initializable {
     private Text observationText;
     @FXML
     private Text pretreatmentText;    
-
+    
+    
+    public NurseMainController(String nameFirst, String nameLast, String dob, String address, String zip, String ssn, String insurance, String phys,
+            int height, int weight, String vax1, String vax2, String symptom, String allergy, String meds, boolean alcdrug)
+    {
+        firstNameText = new Text(nameFirst);
+        
+        lastNameText = new Text(nameLast);
+        
+        dobText = new Text(dob);
+        
+        addressText = new Text(address);
+        
+        zipText = new Text(zip);
+        
+        ssnText = new Text(ssn);
+        
+        insuranceText = new Text(insurance);
+        
+        physText = new Text(phys);
+        
+        heightText = new Text(Integer.toString(height));
+        
+        weightText = new Text(Integer.toString(weight));
+        
+        vax1Text = new Text(vax1);
+       
+        vax2Text = new Text(vax2);
+        
+        symptomText = new Text(symptom);
+        
+        medsText = new Text(meds);
+        
+        allergyText = new Text(allergy);
+        
+        alcdrugText = new Text(Boolean.toString(alcdrug));
+    }
+    
+    public NurseMainController()
+    {
+        
+    }
     
     
 //Nurse Main Page Controller
@@ -76,38 +117,49 @@ public class NurseMainController implements Initializable {
     public void nurseSearchButton(ActionEvent event) throws IOException {
         
 
-        String patientID = patientIDSearch.getText();
+        String patientSsn = patientSsnSearch.getText();
         String firstName = firstNameSearch.getText();
         String lastName = lastNameSearch.getText();
+        
+        //sends search info to nurse
+        Nurse n = new Nurse(firstName, lastName, patientSsn);
+        
+        Registrar r = new Registrar();
 
-        System.out.println(patientID);
+        System.out.println(patientSsn);
         System.out.println(firstName);
         System.out.println(lastName);
         
         //check patient ID match
         //check patient first name match
         //check patient last name match
+        
 
         //if the searched patient exists, set the below variables to true
         //if the search does not exist, set them to false
-        boolean patientFound = true;
+        boolean patientFound;
+        patientFound = n.searchPatient();
         
-        //need to load the data into the variables listed below
-        //sample data
-        String dob = "adam";
-        String address = "adam";
-        String zip = "adam";
-        String ssn = "adam";
-        String insurance = "adam";
-        String phys = "adam";
-        int height = 10;
-        int weight = 10;
-        String vax1 = "adam";
-        String vax2 = "adam";
-        String symptom = "adam";
-        String allergy = "adam";
-        String meds = "adam";
-        boolean alcdrug = true;
+        if(patientFound == true)
+        {
+            r.passInfo();
+            //need to load the data into the variables listed below
+            //sample data
+            String dob = r.dob;
+            String address = r.address;
+            String zip = r.zip;
+            String ssn = "adam";
+            String insurance = "adam";
+            String phys = "adam";
+            int height = 10;
+            int weight = 10;
+            String vax1 = "adam";
+            String vax2 = "adam";
+            String symptom = "adam";
+            String allergy = "adam";
+            String meds = "adam";
+            boolean alcdrug = true;
+        }
 
         if (patientFound == true){
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/PatientFileDisplay.fxml"));
