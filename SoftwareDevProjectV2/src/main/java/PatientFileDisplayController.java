@@ -65,12 +65,9 @@ public class PatientFileDisplayController implements Initializable {
     
     Nurse n = new Nurse();
     
-    
-    public PatientFileDisplayController()
-    {
-        //to get most up to date data
-        r.passInfo();
         
+    public PatientFileDisplayController()
+    {       
         firstNameText = new Text(r.nameFirst);
         
         lastNameText = new Text(r.nameLast);
@@ -102,8 +99,6 @@ public class PatientFileDisplayController implements Initializable {
         allergyText = new Text(r.allergy);
         
         alcdrugText = new Text(Boolean.toString(r.alcdrug));
-        
-        n.passInfo();
         
         vitalsText = new Text(Integer.toString(n.vitals));
         
@@ -144,16 +139,16 @@ public class PatientFileDisplayController implements Initializable {
     public void updateDisplayTable(String patientID){
         //fill the below lines with data based on from patientID
         
-        Nurse ns = new Nurse();
-        String firstName = ns.getPatientFirstName();
-        String lastName = ns.getPatientLastName();
-        String dob = ns.getPatientDOB();
-        boolean alcdrug = ns.getPatientAlcDrug();
+        //Nurse ns = new Nurse();
+        //String firstName = ns.getPatientFirstName();
+        //String lastName = ns.getPatientLastName();
+        //String dob = ns.getPatientDOB();
+        //boolean alcdrug = ns.getPatientAlcDrug();
 
-        firstNameText.setText(firstName);
-        lastNameText.setText(lastName);
-        dobText.setText(dob);
-        alcdrugText.setText(Boolean.toString(alcdrug));
+        //firstNameText.setText(firstName);
+        //lastNameText.setText(lastName);
+        //dobText.setText(dob);
+        //alcdrugText.setText(Boolean.toString(alcdrug));
 //        Registrar r = new Registrar();
 //        Nurse n = new Nurse();
 //        
