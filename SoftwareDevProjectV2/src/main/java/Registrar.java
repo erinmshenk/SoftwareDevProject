@@ -17,6 +17,7 @@ import java.sql.Statement;
  */
 public class Registrar
 {
+        int patientID;
         String nameFirst;
         String nameLast;
         String dob; 
@@ -37,22 +38,22 @@ public class Registrar
     public Registrar(String nameFirst, String nameLast, String dob, String address, String zip, String ssn, String insurance, String phys,
             int height, int weight, String vax1, String vax2, String symptom, String allergy, String meds, boolean alcdrug)
     {
-        nameFirst = nameFirst;
-        nameLast = nameLast;
-        dob = dob; 
-        address = address; 
-        zip = zip; 
-        ssn = ssn; 
-        insurance = insurance;
-        phys = phys;
-        height = height; 
-        weight = weight;
-        vax1 = vax1;
-        vax2 = vax2;
-        symptom = symptom;
-        allergy = allergy; 
-        meds = meds;
-        alcdrug = alcdrug;            
+        this.nameFirst = nameFirst;
+        this.nameLast = nameLast;
+        this.dob = dob; 
+        this.address = address; 
+        this.zip = zip; 
+        this.ssn = ssn; 
+        this.insurance = insurance;
+        this.phys = phys;
+        this.height = height; 
+        this.weight = weight;
+        this.vax1 = vax1;
+        this.vax2 = vax2;
+        this.symptom = symptom;
+        this.allergy = allergy; 
+        this.meds = meds;
+        this.alcdrug = alcdrug;            
     }
     
     public Registrar()
@@ -67,7 +68,7 @@ public class Registrar
         {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8889/hospitalSystem", "root", "root");
-                Statement stmt = con.createStatement();
+
                 //insert patient
                 
                 PreparedStatement prst = con.prepareStatement("INSERT INTO `hospitalSystem`.`Patient`\n" + "(" + "`firstName`,\n" + 
@@ -96,9 +97,9 @@ public class Registrar
         }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
     }
     
-    public void passInfo()
+    public void passInfo(String nameFirst1, String nameLast1, String ssn1)
     {
-        String i = "select * from Patient";
+        String i = "select * from Patient where firstName = '" + nameFirst1 + "' and lastName = '" + nameLast1 + "' and ssn = '" + ssn1 + "';";
         
         try
         {
@@ -111,27 +112,25 @@ public class Registrar
             
             if(rs.next())
             {
-                nameFirst = rs.getString(1);
-                nameLast = rs.getString(2);
-                dob = rs.getString(3);
-                address = rs.getString(4);
-                zip = rs.getString(5);
-                ssn = rs.getString(6);
-                insurance = rs.getString(7);
-                phys = rs.getString(8);
-                height = rs.getInt(9);
-                weight = rs.getInt(10);
-                vax1 = rs.getString(11);
-                vax2 = rs.getString(12);
-                symptom = rs.getString(13);
-                allergy = rs.getString(14);
-                meds = rs.getString(15);
-                alcdrug = rs.getBoolean(16);
+                patientID = rs.getInt(1);
+                nameFirst = rs.getString(2);
+                nameLast = rs.getString(3);
+                dob = rs.getString(4);
+                address = rs.getString(5);
+                zip = rs.getString(6);
+                ssn = rs.getString(7);
+                insurance = rs.getString(8);
+                phys = rs.getString(9);
+                height = rs.getInt(10);
+                weight = rs.getInt(11);
+                vax1 = rs.getString(12);
+                vax2 = rs.getString(13);
+                symptom = rs.getString(14);
+                allergy = rs.getString(15);
+                meds = rs.getString(16);
+                alcdrug = rs.getBoolean(17);
             }
             
         }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
-        
-        PatientFileDisplayController p = new PatientFileDisplayController(nameFirst, nameLast, dob, address, zip, ssn, insurance, phys,
-            height, weight, vax1, vax2, symptom, allergy, meds, alcdrug);
     }
 }
