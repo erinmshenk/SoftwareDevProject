@@ -102,10 +102,9 @@ public class PatientFileDisplayController implements Initializable {
         allergyText = new Text(r.allergy);
         
         alcdrugText = new Text(Boolean.toString(r.alcdrug));
-    }
-    
-    public PatientFileDisplayController(int vitals, int nightsStayed, String bloodpressure, String admittance, String observation, String pretreatment)
-    {
+        
+        n.passInfo();
+        
         vitalsText = new Text(Integer.toString(n.vitals));
         
         nightsStayedText = new Text(Integer.toString(n.nightsStayed));
@@ -118,8 +117,7 @@ public class PatientFileDisplayController implements Initializable {
         
         pretreatmentText = new Text(n.pretreatment);  
     }
-    
-    
+        
     
 //Patient File Display Controller
     @FXML
