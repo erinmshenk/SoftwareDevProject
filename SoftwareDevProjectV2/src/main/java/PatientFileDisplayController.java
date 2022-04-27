@@ -183,14 +183,19 @@ public class PatientFileDisplayController implements Initializable {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8889/hospitalSystem", "root", "root");
             
-            PreparedStatement prst = con.prepareStatement(i);
+            PreparedStatement prst = con.prepareStatement("select * from Patient where firstName = ? and lastName = ? and ssn = ?;");
+            
+            prst.setString(1, nameFirst);
+            prst.setString(2, nameLast);
+            prst.setString(3, ssn);
             
             ResultSet rs = prst.executeQuery();
             
             if(rs.next())
             {
                 patientID = rs.getInt(1);
-                nameFirst = rs.getString(2);
+                 firstNameText.setText("First Name: " + rs.getString(2));
+                //nameFirst = rs.getString(2);
                 nameLast = rs.getString(3);
                 dob = rs.getString(4);
                 address = rs.getString(5);
@@ -207,8 +212,11 @@ public class PatientFileDisplayController implements Initializable {
                 meds = rs.getString(16);
                 alcdrug = rs.getBoolean(17);
             }
-            
-            prst = con.prepareStatement(j);
+            /*
+           prst = con.prepareStatement("select vitals, nightsStayed, bloodpressure, admitted, observation, pretreatment nursePhysicianRecord where firstName = ? and lastName = ? and ssn = ?;");
+            prst.setString(1, nameFirst);
+            prst.setString(2, nameLast);
+            prst.setString(3, ssn);
             
            rs = prst.executeQuery();
             
@@ -220,8 +228,30 @@ public class PatientFileDisplayController implements Initializable {
                 admittance = rs.getString(4);
                 observation = rs.getString(5);
                 pretreatment = rs.getString(6);
-            }
-            
+            }*/
+            firstNameText.setText("First Name: " + nameFirst);
+        System.out.println(nameFirst + " 1");
+        lastNameText.setText(nameLast);
+        dobText.setText(dob);
+        addressText.setText(address);
+        zipText.setText(zip);
+        ssnText.setText(ssn);
+        insuranceText.setText(insurance);
+        physText.setText(phys);
+        heightText.setText(Integer.toString(height));
+        weightText.setText(Integer.toString(weight));
+        vax1Text.setText(vax1);
+        vax2Text.setText(vax2);
+        symptomText.setText(symptom);
+        allergyText.setText(allergy);
+        medsText.setText(meds);
+        alcdrugText.setText(Boolean.toString(alcdrug));
+        vitalsText.setText(Integer.toString(vitals));
+        nightsStayedText.setText(Integer.toString(nightsStayed));
+        bloodPressureText.setText(bloodpressure);
+        admittanceText.setText(admittance);
+        pretreatmentText.setText(pretreatment);
+        observationText.setText(observation);
         }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
         
         firstNameText.setText("First Name: " + nameFirst);
