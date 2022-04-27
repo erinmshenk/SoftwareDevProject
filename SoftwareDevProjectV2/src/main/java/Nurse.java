@@ -14,6 +14,9 @@ public class Nurse{
     String admittance; 
     String observation; 
     String pretreatment;
+    String nameFirst;
+    String nameLast;
+    String ssn;
     
     public Nurse(int vitals, int nightsStayed, String bloodpressure, String admittance, String observation, String pretreatment)
     {
@@ -25,12 +28,13 @@ public class Nurse{
         this.pretreatment = pretreatment;
     }
     
-    Scanner keyboard = new Scanner(System.in);
- 
-    //user input to search for patient
-//    String nameFirst = keyboard.nextLine();
- //   String nameLast = keyboard.nextLine();
-  //  String ssn = keyboard.nextLine();
+    //recieve patient info for query
+    public Nurse(String nameFirst, String nameLast, String ssn)
+    {
+        this.nameFirst = nameFirst;
+        this.nameLast = nameLast;
+        this.ssn = ssn;
+    }
     
     //do not delete
     public Nurse()
@@ -39,6 +43,7 @@ public class Nurse{
     }
     
     //variables to get results from patient file
+    /**
     String insurance = insurance;
     String phys = phys;
     String height = height; 
@@ -48,8 +53,10 @@ public class Nurse{
     String symptom = symptom;
     String allergy = allergy; 
     String meds = meds;
-    String alcdrug = alcdrug;   
+    String alcdrug = alcdrug;  
+    **/
     
+    /**
     public void searchNurse()
     {
         //query for patient's insurance
@@ -201,6 +208,7 @@ public class Nurse{
         
     }
         
+        **/
     //should be called when sumbit button is pushed by Nurse
     public void updatePatient()
     {
