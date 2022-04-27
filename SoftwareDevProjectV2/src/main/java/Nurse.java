@@ -29,11 +29,11 @@ public class Nurse{
     }
     
     //recieve patient info for query
-    public Nurse(String nameFirst, String nameLast, String ssn)
+    public Nurse(String nameFirst1, String nameLast1, String ssn1)
     {
-        this.nameFirst = nameFirst;
-        this.nameLast = nameLast;
-        this.ssn = ssn;
+        nameFirst = nameFirst1;
+        nameLast = nameLast1;
+        ssn = ssn1;
     }
     
     //do not delete
@@ -46,8 +46,7 @@ public class Nurse{
     public Boolean searchPatient()
     {
         String sp = "select * from patient where firstName = '" + nameFirst + "' and lastName = '" + nameLast + "' and ssn = '" + ssn + "';";
-        int t = 0;
-        
+       
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
@@ -60,186 +59,23 @@ public class Nurse{
             
             if(rs.absolute(1))
             {
-                t = 1;
-                return true;
+                //passInfo(nameFirst, nameLast, ssn);
+                //Registrar r = new Registrar();
+                //r.passInfo(nameFirst, nameLast, ssn);
+                return true;               
             }
             
             else
             {
                 return false;
             }
+            
         }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
         
         return false;
     }
     
-    //variables to get results from patient file
-    /**
-    String insurance = insurance;
-    String phys = phys;
-    String height = height; 
-    String weight = weight;
-    String vax1 = vax1;
-    String vax2 = vax2;
-    String symptom = symptom;
-    String allergy = allergy; 
-    String meds = meds;
-    String alcdrug = alcdrug;  
-    **/
-    
-    /**
-    public void searchNurse()
-    {
-        //query for patient's insurance
-        String in = "SELECT patient's insurance provider "
-                + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
-        
-        //query for patient's primary care provider
-        String pcp = "SELECT patient's primary care provider "
-                + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
-        
-        //query for patient's height
-        String h =  "SELECT patient's height "
-                + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
-        
-        //query for patient's weight
-        String w = "SELECT patient's weight "
-                + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
-        
-        //query for patient's first covid vaccine provider
-        String v1 = "SELECT patient's first covid vaccine provider "
-                + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
-        
-        //query for patient's second covid vaccine provider
-        String v2 =  "SELECT patient's second covid vaccine provider "
-                + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
-        
-        //query for patient's symptoms
-        String s = "SELECT the patient's symptoms "
-                + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
-        
-        //query for patient's allergies
-        String a = "SELECT the patient's allergies "
-                + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
-        
-        //query for patient's medications
-        String m =  "SELECT all known medications for the patient "
-                + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
-        
-        //query for patient's alcohol or drug use
-        String sa = "SELECT if the patient has a substance abuse issue "
-                + "WHERE firstName = " + nameFirst + " AND lastName = " + nameLast + " AND ssn = " + ssn + ";";
-       
-        try
-        {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8888/hospitalSystem", "root", "root");
-            
-            java.sql.PreparedStatement prst = null;
-            
-            //execute testID query
-            prst = con.prepareStatement(in);
-            
-            ResultSet rs = prst.executeQuery();
-            
-            if(rs.next())
-            {
-                insurance = rs.getString();
-            }
-            
-            //execute discharge instructions query
-            prst = con.prepareStatement(pcp);
-            
-            rs = prst.executeQuery();
-            
-            if(rs.next())
-            {
-                phys = rs.getString();
-            }
-            
-            //execute diagnosis query
-            prst = con.prepareStatement(h);
-            
-            rs = prst.executeQuery();
-            
-            if(rs.next())
-            {
-                height = rs.getString();
-            }
-            
-            prst = con.prepareStatement(w);
-            
-            rs = prst.executeQuery();
-            
-            if(rs.next())
-            {
-                weight = rs.getString();
-            }
-            
-             //execute testID query
-            prst = con.prepareStatement(v1);
-            
-            ResultSet rs = prst.executeQuery();
-            
-            if(rs.next())
-            {
-                vax1 = rs.getString(1);
-            }
-            
-             //execute testID query
-            prst = con.prepareStatement(v2);
-            
-            ResultSet rs = prst.executeQuery();
-            
-            if(rs.next())
-            {
-                vax2 = rs.getString(1);
-            }
-            
-             //execute testID query
-            prst = con.prepareStatement(s);
-            
-            ResultSet rs = prst.executeQuery();
-            
-            if(rs.next())
-            {
-                symptom = rs.getString();
-            }
-            
-             //execute testID query
-            prst = con.prepareStatement(a);
-            
-            ResultSet rs = prst.executeQuery();
-            
-            if(rs.next())
-            {
-                allergy = rs.getString();
-            }
-            
-             //execute testID query
-            prst = con.prepareStatement(m);
-            
-            ResultSet rs = prst.executeQuery();
-            
-            if(rs.next())
-            {
-                meds = rs.getString();
-            }
-            
-             //execute testID query
-            prst = con.prepareStatement(sa);
-            
-            ResultSet rs = prst.executeQuery();
-            
-            if(rs.next())
-            {
-                alcdrug = rs.getString();
-            }
-        }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
-        
-    }
-        
-        **/
+
     //should be called when sumbit button is pushed by Nurse
     public void updatePatient()
     {
@@ -262,9 +98,9 @@ public class Nurse{
         }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
     }
     
-    public void passInfo()
+    public void passInfo(String nameFirst1, String nameLast1, String ssn1)
     {
-        String i = "select vitals, nightsStayed, bloodpressure, admitted, observation, pretreatment nursePhysicianRecord";
+        String i = "select vitals, nightsStayed, bloodpressure, admitted, observation, pretreatment nursePhysicianRecord where firstName = '" + nameFirst1 + "' and lastName = '" + nameLast1 + "' and ssn = '" + ssn1 + "';";
         
         try
         {
