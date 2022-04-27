@@ -38,6 +38,9 @@ public class Nurse{
     public String getPatientDOB() {
         return "08/22/2000";
     }
+    public boolean getPatientAlcDrug() {
+        return true;
+    }
 
 
     

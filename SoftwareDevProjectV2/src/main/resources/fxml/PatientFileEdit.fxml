@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -24,30 +26,36 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="firstNameTextField" disable = "true" text="missing data"/>
-            <TextField fx:id="lastNameTextField" disable = "true" GridPane.columnIndex="1" text="missing data"/>
-            <TextField fx:id="dobTextField" disable = "true" GridPane.columnIndex="2" text="missing data"/>
-            <TextField fx:id="addressTextField" GridPane.rowIndex="1" text="missing data"/>
-            <TextField fx:id="zipTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" text="missing data"/>
-            <TextField fx:id="ssnTextField" disable = "true" GridPane.columnIndex="2" GridPane.rowIndex="1" text="missing data"/>
-            <TextField fx:id="insuranceTextField" GridPane.rowIndex="2" text="missing data"/>
-            <TextField fx:id="physTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" text="missing data"/>
-            <TextField fx:id="heightTextField" GridPane.columnIndex="2" GridPane.rowIndex="2" text="missing data"/>
-            <TextField fx:id="weightTextField" GridPane.rowIndex="3" text="missing data"/>
-            <TextField fx:id="vax1TextField" GridPane.columnIndex="1" GridPane.rowIndex="3" text="missing data"/>
-            <TextField fx:id="vax2TextField" GridPane.columnIndex="2" GridPane.rowIndex="3" text="missing data"/>
-            <TextField fx:id="symptomTextField" GridPane.rowIndex="4" text="missing data"/>
-            <TextField fx:id="allergyTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" text="missing data"/>
-            <TextField fx:id="medsTextField" GridPane.columnIndex="2" GridPane.rowIndex="4" text="missing data"/>
-            <TextField fx:id="alcdrugCheckBox" GridPane.rowIndex="5" text="missing data"/>
-            <TextField fx:id="vitalsTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" text="missing data"/>
-            <TextField fx:id="nightsStayedTextField" GridPane.columnIndex="2" GridPane.rowIndex="5" text="missing data"/>
+            <TextField fx:id="firstNameTextField" disable="true" text="missing data" />
+            <TextField fx:id="lastNameTextField" disable="true" text="missing data" GridPane.columnIndex="1" />
+            <TextField fx:id="dobTextField" disable="true" text="missing data" GridPane.columnIndex="2" />
+            <TextField fx:id="addressTextField" text="missing data" GridPane.rowIndex="1" />
+            <TextField fx:id="zipTextField" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="ssnTextField" disable="true" text="missing data" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="insuranceTextField" text="missing data" GridPane.rowIndex="2" />
+            <TextField fx:id="physTextField" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="heightTextField" text="missing data" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="weightTextField" text="missing data" GridPane.rowIndex="3" />
+            <TextField fx:id="vax1TextField" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="vax2TextField" text="missing data" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="symptomTextField" text="missing data" GridPane.rowIndex="4" />
+            <TextField fx:id="allergyTextField" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="medsTextField" text="missing data" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <CheckBox fx:id="alcdrugCheckBox" mnemonicParsing="false" text="Alcohol/Drugs?" GridPane.rowIndex="5" />
+            <TextField fx:id="vitalsTextField" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="nightsStayedTextField" text="missing data" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <TextField fx:id="bloodPressureTextField" text="missing data" GridPane.rowIndex="6" />
+            <TextField fx:id="admittanceTextField" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="pretreatmentTextField" text="missing data" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <TextArea fx:id="observationTextArea" prefHeight="38.0" prefWidth="132.0" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="7" />
          </children>
       </GridPane>
-      <Button fx:id="editPatientData" layoutX="110.0" layoutY="330.0" onAction="#editPatientData" text="Edit Patient Data" />
-      <Button fx:id="returnToMainPage" layoutX="264.0" layoutY="330.0" onAction="#returnToMainPage" text="Return To Main Page" />
+      <Button fx:id="submitUpdates" layoutX="109.0" layoutY="410.0" onAction="#submitUpdates" text="Submit Updates" />
+      <Button fx:id="returnToMainPage" layoutX="263.0" layoutY="410.0" onAction="#returnToMainPage" text="Return To Main Page" />
       <Label layoutX="156.0" layoutY="80.0" text="Edit Patient Information">
          <font>
             <Font size="18.0" />

@@ -48,39 +48,67 @@ public class PatientFileEditController implements Initializable {
     @FXML
     private TextField allergyTextField;
     @FXML
-    private CheckBox alcdrugTextField;
+    private CheckBox alcdrugCheckBox;
     
 //Patient File Display Controller
     @FXML
-    private void editPatientData(ActionEvent event) throws IOException {
+    private void submitUpdates(ActionEvent event) throws IOException {
+//this is missing something, I copied the code over from the Registrar page
+//missing pieces for the Nurse's new data
+
+//        String nameFirst = firstNameTextField.getText();
+//        String nameLast = lastNameTextField.getText();
+//        String dob = dobTextField.getText();
+//        String address = addressTextField.getText();
+//        String zip = zipTextField.getText();
+//        String ssn = ssnTextField.getText();
+//        String insurance = insuranceTextField.getText();
+//        String phys = physTextField.getText();
+//        int height = Integer.parseInt(heightTextField.getText());
+//        int weight = Integer.parseInt(weightTextField.getText());
+//        String vax1 = vax1TextField.getText();
+//        String vax2 = vax2TextField.getText();
+//        String symptom = symptomTextField.getText();
+//        String allergy = medsTextField.getText();
+//        String meds = allergyTextField.getText();
+//        boolean alcdrug = alcdrugTextField.isSelected();
+//        
+//        Registrar r = new Registrar(nameFirst, nameLast, dob, address, zip, ssn, insurance, phys,
+//            height, weight, vax1, vax2, symptom, allergy, meds, alcdrug);
+//        r.insertPatient();
+
+
 
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/NurseMainPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("Registrar Main Page");
+        stage.setTitle("Nurse Main Page");
         stage.setScene(scene);
         stage.show();
     }
 
     @FXML
     private void returnToMainPage(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/RegistrarMainPage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/NurseMainPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("Registrar Main Page");
+        stage.setTitle("Nurse Main Page");
         stage.setScene(scene);
         stage.show();
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void updateEditTable(String patientID){
         Nurse ns = new Nurse();
         String firstName = ns.getPatientFirstName();
         String lastName = ns.getPatientLastName();
         String dob = ns.getPatientDOB();
+        boolean alcdrug = ns.getPatientAlcDrug();
         firstNameTextField.setText(firstName);
         lastNameTextField.setText(lastName);
         dobTextField.setText(dob);
-
+        alcdrugCheckBox.setSelected(alcdrug);
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        updateEditTable("PatientID");
     }
 }

@@ -140,26 +140,24 @@ public class PatientFileDisplayController implements Initializable {
         stage.show();
     }
 
-    public void updateTable(String patientID){
+    public void updateDisplayTable(String patientID){
         //fill the below lines with data based on from patientID
         
         Nurse ns = new Nurse();
         String firstName = ns.getPatientFirstName();
         String lastName = ns.getPatientLastName();
         String dob = ns.getPatientDOB();
+        boolean alcdrug = ns.getPatientAlcDrug();
 
         firstNameText.setText(firstName);
         lastNameText.setText(lastName);
         dobText.setText(dob);
-        
-        
+        alcdrugText.setText(Boolean.toString(alcdrug));
 //        Registrar r = new Registrar();
 //        Nurse n = new Nurse();
 //        
 //        r.passInfo();
 //        n.passInfo();
-
-        
 //        addressText.setText(address);
 //        zipText.setText(zip);
 //        ssnText.setText(ssn);
@@ -176,6 +174,6 @@ public class PatientFileDisplayController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        updateTable("patientID");
+        updateDisplayTable("patientID");
     }
 }
