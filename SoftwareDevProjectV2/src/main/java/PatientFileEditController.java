@@ -51,7 +51,7 @@ public class PatientFileEditController implements Initializable {
     
 //Patient File Display Controller
     @FXML
-    private void submitNewForm(ActionEvent event) throws IOException {
+    private void editPatientData(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/NurseMainPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -62,7 +62,7 @@ public class PatientFileEditController implements Initializable {
     }
 
     @FXML
-    private void cancelNewForm(ActionEvent event) throws IOException {
+    private void returnToMainPage(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/RegistrarMainPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -73,21 +73,5 @@ public class PatientFileEditController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        firstNameText.setText("replace text with variable");
-        lastNameText.setText("replace text with variable");
-        dobText.setText("replace text with variable");
-        addressText.setText("replace text with variable");
-        zipText.setText("replace text with variable");
-        ssnText.setText("replace text with variable");
-        insuranceText.setText("replace text with variable");
-        physText.setText("replace text with variable");
-        heightText.setText("replace text with variable");
-        weightText.setText("replace text with variable");
-        vax1Text.setText("replace text with variable");
-        vax2Text.setText("replace text with variable");
-        symptomText.setText("replace text with variable");
-        allergyText.setText("replace text with variable");
-        medsText.setText("replace text with variable");
-        alcdrugText.setText("replace text with variable");
     }
 }

@@ -122,10 +122,10 @@ public class PatientFileDisplayController implements Initializable {
     @FXML
     private void editPatientData(ActionEvent event) throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/NurseMainPage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/PatientFileEdit.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("Registrar Main Page");
+        stage.setTitle("Edit Patient File");
         stage.setScene(scene);
         stage.show();
     }
@@ -135,7 +135,7 @@ public class PatientFileDisplayController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/NurseMainPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("Registrar Main Page");
+        stage.setTitle("Nurse Main Page");
         stage.setScene(scene);
         stage.show();
     }
@@ -177,21 +177,5 @@ public class PatientFileDisplayController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         updateTable("patientID");
-//        firstNameText.setText("replace text with variable");
-//        lastNameText.setText("replace text with variable");
-//        dobText.setText("replace text with variable");
-//        addressText.setText("replace text with variable");
-//        zipText.setText("replace text with variable");
-//        ssnText.setText("replace text with variable");
-//        insuranceText.setText("replace text with variable");
-//        physText.setText("replace text with variable");
-//        heightText.setText("replace text with variable");
-//        weightText.setText("replace text with variable");
-//        vax1Text.setText("replace text with variable");
-//        vax2Text.setText("replace text with variable");
-//        symptomText.setText("replace text with variable");
-//        allergyText.setText("replace text with variable");
-//        medsText.setText("replace text with variable");
-//        alcdrugText.setText("replace text with variable");
     }
 }

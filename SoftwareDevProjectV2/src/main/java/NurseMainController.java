@@ -114,6 +114,7 @@ public class NurseMainController implements Initializable {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
+            stage.setTitle("Display Patient File");
             stage.show();
         }
         else{
@@ -127,6 +128,7 @@ public class NurseMainController implements Initializable {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("Sign In Page");
         stage.show();
     }
 
