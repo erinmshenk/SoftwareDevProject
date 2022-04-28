@@ -44,7 +44,7 @@ public class BillingMainController implements Initializable {
         //I believe the below code could be moved to the Billing.java file
         //Billing bi = new Billing(firstName, lastName, patientID);
         
-        boolean patientFound = bi.searchPatient("Erin", lastName, patientID);
+        boolean patientFound = bi.searchPatient(firstName, lastName, patientID);
         bi.setNameF(firstName);
         System.out.println("sending " + firstName);
         
