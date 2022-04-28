@@ -48,6 +48,7 @@ public class BillingMainController implements Initializable {
         bi.setNameF(firstName);
         System.out.println("sending " + firstName);
         
+        patientFound = true;
         
         if (patientFound == true){
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/BillingSearchDisplay.fxml"));

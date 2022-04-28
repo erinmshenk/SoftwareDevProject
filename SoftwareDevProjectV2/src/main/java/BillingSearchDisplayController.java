@@ -23,9 +23,9 @@ public class BillingSearchDisplayController implements Initializable {
     
 
     @FXML
-    private Text medNameT, medPriceT, testNameT, testPriceT, nightsStayedText, nightPriceT;    
+    private Text medNameT, medPriceT, testNameT, testPriceT, nightsStayedText, nightPriceT, totalCostText;    
     
-     int testID = 0;
+    int testID = 0;
     String dischargeInstruct = "";
     String diagnosis = "";
     int testPrice = 0;
@@ -207,14 +207,29 @@ public class BillingSearchDisplayController implements Initializable {
             
         }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
         
-        nightPrice = nightsStayed * nightPrice;
+        
+
+        medName = "advil";
+        medPrice = 10;
+
+        testName = "temperature";
+        testPrice = 5;
+
+        nightsStayed = 3;
+        nightPrice = 500;
+
+        dischargeInstruct = "take advil twice a day";
+        diagnosis = "muscle aches";
+
+        int nightStayedCost = nightsStayed * nightPrice;        
         
         medNameT.setText(medName); 
-        medPriceT.setText(Integer.toString(medPrice));
+        medPriceT.setText("$" + Integer.toString(medPrice));
         testNameT.setText(testName);
-        testPriceT.setText(Integer.toString(testPrice));
+        testPriceT.setText("$" + Integer.toString(testPrice));
         nightsStayedText.setText(Integer.toString(nightsStayed));
-        nightPriceT.setText(Integer.toString(nightPrice));
+        nightPriceT.setText("$" + Integer.toString(nightStayedCost));
+        totalCostText.setText("$" + Integer.toString(medPrice + testPrice + nightStayedCost));
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

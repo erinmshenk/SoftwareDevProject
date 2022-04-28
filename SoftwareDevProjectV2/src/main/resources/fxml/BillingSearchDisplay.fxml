@@ -37,6 +37,10 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nights Stayed:" GridPane.rowIndex="5" />
             <Text fx:id="nightsStayedText" strokeType="OUTSIDE" strokeWidth="0.0" text="nightsStayed" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Text fx:id="nightPriceT" strokeType="OUTSIDE" strokeWidth="0.0" text="nightPrice" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Cost:" GridPane.rowIndex="6" />
+            <Text fx:id="totalCostText" strokeType="OUTSIDE" strokeWidth="0.0" text="totalCost" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Medicine:" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tests:" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <Label layoutX="208.0" layoutY="90.0" text="Patient Bill">
@@ -44,6 +48,6 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="returnToMainPage" layoutX="186.0" layoutY="363.0" onAction="#returnToMainPage" text="Return To Main Page" />
+      <Button fx:id="returnToMainPage" layoutX="186.0" layoutY="398.0" onAction="#returnToMainPage" text="Return To Main Page" />
    </children>
 </AnchorPane>
