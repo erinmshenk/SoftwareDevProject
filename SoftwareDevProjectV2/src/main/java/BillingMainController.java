@@ -25,19 +25,29 @@ public class BillingMainController implements Initializable {
     @FXML
     private Text patientSearchError;
     
+    Billing bi = new Billing();
+    
     
 //Nurse Main Page Controller
     @FXML
     public void nurseSearchButton(ActionEvent event) throws IOException {
         
-
+        
+        
         String patientID = patientSSNSearch.getText();
         String firstName = firstNameSearch.getText();
+        //bi.setNameF(firstNameSearch.getText());
         String lastName = lastNameSearch.getText();
-
+        
+        System.out.println(firstName);
 
         //I believe the below code could be moved to the Billing.java file
-        boolean patientFound = true;
+        //Billing bi = new Billing(firstName, lastName, patientID);
+        
+        boolean patientFound = bi.searchPatient("Erin", lastName, patientID);
+        bi.setNameF(firstName);
+        System.out.println("sending " + firstName);
+        
         
         if (patientFound == true){
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/BillingSearchDisplay.fxml"));

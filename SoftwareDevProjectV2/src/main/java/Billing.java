@@ -1,7 +1,9 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -26,6 +28,66 @@ public class Billing
     String testName = "";
     int nightsStayed = 0;
     int nightPrice = 0;
+    String nameFirst;
+    String nameLast;
+    String ssn;
+    
+    public Billing()
+    {
+        
+    }
+    
+    public void setNameF(String nf)
+    {
+        this.nameFirst = nf;
+    }
+    public String getNameF()
+    {
+        System.out.println(nameFirst + " in billing");
+        return nameFirst;
+    }
+    
+    public String getNameL()
+    {
+        return nameLast;
+    }
+    
+    public String getSsn()
+    {
+        return ssn;
+    }
+    
+    public Boolean searchPatient(String nameFirst, String nameLast, String ssn)
+    {
+       
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8889/hospitalSystem", "root", "root");
+            Statement stmt = con.createStatement();
+            
+            PreparedStatement prst = con.prepareStatement("select * from Patient where firstName = ? and lastName = ? and ssn = ?;");
+            
+            prst.setString(1, nameFirst);
+            prst.setString(2, nameLast);
+            prst.setString(3, ssn);
+            
+            ResultSet rs = prst.executeQuery();
+            
+            if(rs.absolute(1))
+            {
+                return true;               
+            }
+            
+            else
+            {
+                return false;
+            }
+            
+        }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
+        
+        return false;
+    }
     
     public void searchBill(String nameFirst, String nameLast, String ssn)
     {

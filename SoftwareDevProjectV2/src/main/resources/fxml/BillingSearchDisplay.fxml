@@ -30,13 +30,13 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item: " GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Text fx:id="medName" strokeType="OUTSIDE" strokeWidth="0.0" text="medName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Text fx:id="medPrice" strokeType="OUTSIDE" strokeWidth="0.0" text="medPrice" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Text fx:id="testName" strokeType="OUTSIDE" strokeWidth="0.0" text="testName" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Text fx:id="testPrice" strokeType="OUTSIDE" strokeWidth="0.0" text="testPrice" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Text fx:id="medNameT" strokeType="OUTSIDE" strokeWidth="0.0" text="medName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Text fx:id="medPriceT" strokeType="OUTSIDE" strokeWidth="0.0" text="medPrice" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Text fx:id="testNameT" strokeType="OUTSIDE" strokeWidth="0.0" text="testName" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Text fx:id="testPriceT" strokeType="OUTSIDE" strokeWidth="0.0" text="testPrice" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nights Stayed:" GridPane.rowIndex="5" />
-            <Text fx:id="nightsStayed" strokeType="OUTSIDE" strokeWidth="0.0" text="nightsStayed" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Text fx:id="nightPrice" strokeType="OUTSIDE" strokeWidth="0.0" text="nightPrice" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Text fx:id="nightsStayedText" strokeType="OUTSIDE" strokeWidth="0.0" text="nightsStayed" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Text fx:id="nightPriceT" strokeType="OUTSIDE" strokeWidth="0.0" text="nightPrice" GridPane.columnIndex="2" GridPane.rowIndex="5" />
          </children>
       </GridPane>
       <Label layoutX="208.0" layoutY="90.0" text="Patient Bill">
