@@ -23,7 +23,7 @@ public class BillingSearchDisplayController implements Initializable {
     
 
     @FXML
-    private Text medNameT, medPriceT, testNameT, testPriceT, nightsStayedText, nightPriceT, totalCostText;    
+    private Text medNameT, medPriceT, testNameT, testPriceT, nightsStayedText, nightPriceT, totalCostText, diagnosisText, dischargeText;    
     
     int testID = 0;
     String dischargeInstruct = "";
@@ -218,8 +218,8 @@ public class BillingSearchDisplayController implements Initializable {
         nightsStayed = 3;
         nightPrice = 500;
 
-        dischargeInstruct = "take advil twice a day";
         diagnosis = "muscle aches";
+        dischargeInstruct = "take advil twice a day";
 
         int nightStayedCost = nightsStayed * nightPrice;        
         
@@ -230,6 +230,11 @@ public class BillingSearchDisplayController implements Initializable {
         nightsStayedText.setText(Integer.toString(nightsStayed));
         nightPriceT.setText("$" + Integer.toString(nightStayedCost));
         totalCostText.setText("$" + Integer.toString(medPrice + testPrice + nightStayedCost));
+        diagnosisText.setText(diagnosis);
+        dischargeText.setText(dischargeInstruct);
+        
+        
+        
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
