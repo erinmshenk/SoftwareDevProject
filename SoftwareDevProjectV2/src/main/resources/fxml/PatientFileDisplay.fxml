@@ -49,7 +49,7 @@
             <Text fx:id="bloodPressureText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.rowIndex="6" />
             <Text fx:id="admittanceText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <Text fx:id="pretreatmentText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Text fx:id="observationsText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Text fx:id="observationText" strokeType="OUTSIDE" strokeWidth="0.0" text="missing data" GridPane.columnIndex="1" GridPane.rowIndex="7" />
          </children>
       </GridPane>
       <Label layoutX="103.0" layoutY="80.0" text="Search Display of Patient Information">

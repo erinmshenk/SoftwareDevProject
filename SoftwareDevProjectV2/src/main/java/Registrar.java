@@ -56,6 +56,13 @@ public class Registrar
         this.alcdrug = alcdrug;            
     }
     
+    public Registrar(String nameFirst1, String nameLast1, String ssn1)
+    {
+        nameFirst = nameFirst1;
+        nameLast = nameLast1;
+        ssn = ssn1;
+    }
+    
     public Registrar()
     {
         
@@ -106,7 +113,11 @@ public class Registrar
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8889/hospitalSystem", "root", "root");
             
-            PreparedStatement prst = con.prepareStatement(i);
+            PreparedStatement prst = con.prepareStatement("select * from Patient where firstName = ? and lastName = ? and ssn = ?;");
+            
+            prst.setString(1, nameFirst1);
+            prst.setString(2, nameLast1);
+            prst.setString(3, ssn1);
             
             ResultSet rs = prst.executeQuery();
             

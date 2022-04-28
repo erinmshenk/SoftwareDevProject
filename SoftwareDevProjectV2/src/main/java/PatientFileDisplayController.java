@@ -1,5 +1,10 @@
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -59,65 +64,85 @@ public class PatientFileDisplayController implements Initializable {
     @FXML
     private Text observationText;
     @FXML
-    private Text pretreatmentText;    
+    private Text pretreatmentText;  
     
-    public PatientFileDisplayController(String nameFirst, String nameLast, String dob, String address, String zip, String ssn, String insurance, String phys,
-            int height, int weight, String vax1, String vax2, String symptom, String allergy, String meds, boolean alcdrug)
-    {
-        firstNameText = new Text(nameFirst);
-        
-        lastNameText = new Text(nameLast);
-        
-        dobText = new Text(dob);
-        
-        addressText = new Text(address);
-        
-        zipText = new Text(zip);
-        
-        ssnText = new Text(ssn);
-        
-        insuranceText = new Text(insurance);
-        
-        physText = new Text(phys);
-        
-        heightText = new Text(Integer.toString(height));
-        
-        weightText = new Text(Integer.toString(weight));
-        
-        vax1Text = new Text(vax1);
-       
-        vax2Text = new Text(vax2);
-        
-        symptomText = new Text(symptom);
-        
-        medsText = new Text(meds);
-        
-        allergyText = new Text(allergy);
-        
-        alcdrugText = new Text(Boolean.toString(alcdrug));
-    }
+    int patientID;
+    String nameFirst;
+    String nameLast;
+    String dob;
+    String address; 
+        String zip; 
+        String ssn; 
+        String insurance;
+        String phys;
+        int height; 
+        int weight;
+        String vax1;
+        String vax2;
+        String symptom;
+        String allergy; 
+        String meds;
+        boolean alcdrug;
+        int vitals;
+    int nightsStayed; 
+    String bloodpressure;
+    String admittance; 
+    String observation; 
+    String pretreatment;
     
-    public PatientFileDisplayController(int vitals, int nightsStayed, String bloodpressure, String admittance, String observation, String pretreatment)
-    {
-        vitalsText = new Text(Integer.toString(vitals));
-        
-        nightsStayedText = new Text(Integer.toString(nightsStayed));
-        
-        bloodPressureText = new Text(bloodpressure);
-        
-        admittanceText = new Text(admittance);
-        
-        observationText = new Text(observation);
-        
-        pretreatmentText = new Text(pretreatment);  
-    }
+    //Registrar r = new Registrar();
     
+    //Nurse n = new Nurse();
+    
+     /*   
     public PatientFileDisplayController()
-    {
+    {       
+        firstNameText = new Text(r.nameFirst);
         
+        lastNameText = new Text(r.nameLast);
+        
+        dobText = new Text(r.dob);
+        
+        addressText = new Text(r.address);
+        
+        zipText = new Text(r.zip);
+        
+        ssnText = new Text(r.ssn);
+        
+        insuranceText = new Text(r.insurance);
+        
+        physText = new Text(r.phys);
+        
+        heightText = new Text(Integer.toString(r.height));
+        
+        weightText = new Text(Integer.toString(r.weight));
+        
+        vax1Text = new Text(r.vax1);
+       
+        vax2Text = new Text(r.vax2);
+        
+        symptomText = new Text(r.symptom);
+        
+        medsText = new Text(r.meds);
+        
+        allergyText = new Text(r.allergy);
+        
+        alcdrugText = new Text(Boolean.toString(r.alcdrug));
+        
+        vitalsText = new Text(Integer.toString(n.vitals));
+        
+        nightsStayedText = new Text(Integer.toString(n.nightsStayed));
+        
+        bloodPressureText = new Text(n.bloodpressure);
+        
+        admittanceText = new Text(n.admittance);
+        
+        observationText = new Text(n.observation);
+        
+        pretreatmentText = new Text(n.pretreatment);  
     }
-    
-    
+        
+    */
 //Patient File Display Controller
     @FXML
     private void editPatientData(ActionEvent event) throws IOException {
@@ -140,43 +165,122 @@ public class PatientFileDisplayController implements Initializable {
         stage.show();
     }
 
-    public void updateDisplayTable(String patientID){
+    public void updateDisplayTable(){
         //fill the below lines with data based on from patientID
+
+        //Registrar r = new Registrar();
+        //Nurse n = new Nurse();
         
-//        Nurse ns = new Nurse();
-//        String firstName = ns.getPatientFirstName();
-//        String lastName = ns.getPatientLastName();
-//        String dob = ns.getPatientDOB();
-//        boolean alcdrug = ns.getPatientAlcDrug();
-
-//        firstNameText.setText(firstName);
-//        lastNameText.setText(lastName);
-//        dobText.setText(dob);
-//        alcdrugText.setText(Boolean.toString(alcdrug));
-
-
-//        Registrar r = new Registrar();
-//        Nurse n = new Nurse();
-//        
-//        r.passInfo();
-//        n.passInfo();
-
-//        addressText.setText(address);
-//        zipText.setText(zip);
-//        ssnText.setText(ssn);
-//        insuranceText.setText(insurance);
-//        physText.setText(phys);
-//        heightText.setText(Integer.toString(height));
-//        weightText.setText(Integer.toString(weight));
-//        vax1Text.setText(vax1);
-//        vax2Text.setText(vax2);
-//        symptomText.setText(symptom);
-//        allergyText.setText(allergy);
-//        medsText.setText(meds);
-//        alcdrugText.setText(Boolean.toString(alcdrug));
+        //r.passInfo(n.nameFirst, n.nameLast, n.ssn);
+        //n.passInfo();
+        
+        String i = "select * from Patient where firstName = '" + nameFirst + "' and lastName = '" + nameLast + "' and ssn = '" + ssn + "';";
+        
+        String j = "select vitals, nightsStayed, bloodpressure, admitted, observation, pretreatment nursePhysicianRecord where firstName = '" + nameFirst + "' and lastName = '" + nameLast + "' and ssn = '" + ssn + "';";
+        
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8889/hospitalSystem", "root", "root");
+            
+            PreparedStatement prst = con.prepareStatement("select * from Patient where firstName = ? and lastName = ? and ssn = ?;");
+            
+            prst.setString(1, nameFirst);
+            prst.setString(2, nameLast);
+            prst.setString(3, ssn);
+            
+            ResultSet rs = prst.executeQuery();
+            
+            if(rs.next())
+            {
+                patientID = rs.getInt(1);
+                 firstNameText.setText("First Name: " + rs.getString(2));
+                //nameFirst = rs.getString(2);
+                nameLast = rs.getString(3);
+                dob = rs.getString(4);
+                address = rs.getString(5);
+                zip = rs.getString(6);
+                ssn = rs.getString(7);
+                insurance = rs.getString(8);
+                phys = rs.getString(9);
+                height = rs.getInt(10);
+                weight = rs.getInt(11);
+                vax1 = rs.getString(12);
+                vax2 = rs.getString(13);
+                symptom = rs.getString(14);
+                allergy = rs.getString(15);
+                meds = rs.getString(16);
+                alcdrug = rs.getBoolean(17);
+            }
+            /*
+           prst = con.prepareStatement("select vitals, nightsStayed, bloodpressure, admitted, observation, pretreatment nursePhysicianRecord where firstName = ? and lastName = ? and ssn = ?;");
+            prst.setString(1, nameFirst);
+            prst.setString(2, nameLast);
+            prst.setString(3, ssn);
+            
+           rs = prst.executeQuery();
+            
+            if(rs.next())
+            {
+                vitals = rs.getInt(1);
+                nightsStayed = rs.getInt(2);
+                bloodpressure = rs.getString(3);
+                admittance = rs.getString(4);
+                observation = rs.getString(5);
+                pretreatment = rs.getString(6);
+            }*/
+            firstNameText.setText("First Name: " + nameFirst);
+        System.out.println(nameFirst + " 1");
+        lastNameText.setText(nameLast);
+        dobText.setText(dob);
+        addressText.setText(address);
+        zipText.setText(zip);
+        ssnText.setText(ssn);
+        insuranceText.setText(insurance);
+        physText.setText(phys);
+        heightText.setText(Integer.toString(height));
+        weightText.setText(Integer.toString(weight));
+        vax1Text.setText(vax1);
+        vax2Text.setText(vax2);
+        symptomText.setText(symptom);
+        allergyText.setText(allergy);
+        medsText.setText(meds);
+        alcdrugText.setText(Boolean.toString(alcdrug));
+        vitalsText.setText(Integer.toString(vitals));
+        nightsStayedText.setText(Integer.toString(nightsStayed));
+        bloodPressureText.setText(bloodpressure);
+        admittanceText.setText(admittance);
+        pretreatmentText.setText(pretreatment);
+        observationText.setText(observation);
+        }catch(ClassNotFoundException | SQLException e){System.out.println(e);}
+        
+        firstNameText.setText("First Name: " + nameFirst);
+        System.out.println(nameFirst + " 1");
+        lastNameText.setText(nameLast);
+        dobText.setText(dob);
+        addressText.setText(address);
+        zipText.setText(zip);
+        ssnText.setText(ssn);
+        insuranceText.setText(insurance);
+        physText.setText(phys);
+        heightText.setText(Integer.toString(height));
+        weightText.setText(Integer.toString(weight));
+        vax1Text.setText(vax1);
+        vax2Text.setText(vax2);
+        symptomText.setText(symptom);
+        allergyText.setText(allergy);
+        medsText.setText(meds);
+        alcdrugText.setText(Boolean.toString(alcdrug));
+        vitalsText.setText(Integer.toString(vitals));
+        nightsStayedText.setText(Integer.toString(nightsStayed));
+        bloodPressureText.setText(bloodpressure);
+        admittanceText.setText(admittance);
+        pretreatmentText.setText(pretreatment);
+        observationText.setText(observation);
+        
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        updateDisplayTable("patientID");
+        updateDisplayTable();
     }
 }
