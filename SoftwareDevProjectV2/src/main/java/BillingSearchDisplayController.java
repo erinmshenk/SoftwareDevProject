@@ -101,11 +101,10 @@ public class BillingSearchDisplayController implements Initializable {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:8889/hospitalSystem", "root", "root");
             
            java.sql.PreparedStatement prst = null;
+          
             
             //execute testID query
-            prst = con.prepareStatement("SELECT testID from nursePhysicianRecord join Patient "
-                + "on nursePhysicianRecord.patientID = Patient.patientID"
-                + "WHERE firstName = ? AND lastName = ? AND ssn = ?;");
+            prst = con.prepareStatement("SELECT testID from nursePhysicianRecord join Patient on nursePhysicianRecord.patientID = Patient.patientID WHERE firstName = ? AND lastName = ? AND ssn = ?;");
             prst.setString(1, "John");
             prst.setString(2, "Doe");
             prst.setString(3, "222-22-2222");
@@ -118,9 +117,7 @@ public class BillingSearchDisplayController implements Initializable {
             }
             
             //execute discharge instructions query
-            prst = con.prepareStatement("SELECT discharge from nursePhysicianRecord join Patient "
-                + "on nursePhysicianRecord.patientID = Patient.patientID"
-                + "WHERE firstName = ? AND lastName = ? AND ssn = ?;");
+            prst = con.prepareStatement("SELECT discharge from nursePhysicianRecord join Patient on nursePhysicianRecord.patientID = Patient.patientID WHERE firstName = ? AND lastName = ? AND ssn = ?;");
             
             prst.setString(1, "John");
             prst.setString(2, "Doe");
@@ -136,7 +133,7 @@ public class BillingSearchDisplayController implements Initializable {
             //execute diagnosis query
             prst = con.prepareStatement("SELECT diagnosis from nursePhysicianRecord join Patient "
                 + "on nursePhysicianRecord.patientID = Patient.patientID"
-                + "WHERE firstName = ? AND lastName = ? AND ssn = ?;");
+                + " WHERE firstName = ? AND lastName = ? AND ssn = ?;");
             
             prst.setString(1, "John");
             prst.setString(2, "Doe");
