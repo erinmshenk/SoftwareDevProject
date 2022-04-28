@@ -15,12 +15,6 @@ import java.util.Scanner;
  */
 public class Billing 
 {
-    Scanner keyboard = new Scanner(System.in);
-    
-    //user input to search for patient
-    String nameFirst = keyboard.nextLine();
-    String nameLast = keyboard.nextLine();
-    String ssn = keyboard.nextLine();
     
     //variables to get results from database query
     int testID = 0;
@@ -33,7 +27,7 @@ public class Billing
     int nightsStayed = 0;
     int nightPrice = 0;
     
-    public void searchBill()
+    public void searchBill(String nameFirst, String nameLast, String ssn)
     {
         //query for testID
         String q = "SELECT testID from nursePhysicianRecord join Patient "
