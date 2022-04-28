@@ -97,6 +97,5 @@ public class NewPatientController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
+    }
 }
