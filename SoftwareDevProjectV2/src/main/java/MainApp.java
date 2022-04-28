@@ -42,7 +42,7 @@ public class MainApp extends Application {
             Statement stmt = con.createStatement();
 
             //creates the database *only run this section once*
-            /**
+            
             stmt.executeUpdate("CREATE DATABASE hospitalSystem");
             stmt.executeUpdate(" CREATE TABLE `Patient` (\n" +
 "                                 `patientID` int(11) NOT NULL AUTO_INCREMENT,\n" +
@@ -162,7 +162,7 @@ public class MainApp extends Application {
 "                               (AUTO_INCREMENT,\n" +
 "                               'stool test',\n" +
 "                               175);");
-               **/
+              
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e);
         }

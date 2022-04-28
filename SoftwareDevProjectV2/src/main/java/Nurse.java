@@ -63,9 +63,7 @@ public class Nurse{
             
             if(rs.absolute(1))
             {
-                //passInfo(nameFirst, nameLast, ssn);
-                //Registrar r = new Registrar();
-                //r.passInfo(nameFirst, nameLast, ssn);
+
                 return true;               
             }
             
